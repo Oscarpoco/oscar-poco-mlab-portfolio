@@ -39,6 +39,7 @@ body {
   min-height: 100vh;
   background: var(--bg-gradient);
   transition: background 0.3s ease;
+  width: 100%;
 }
 
 .navbar {
@@ -53,6 +54,7 @@ body {
   top: 0;
   z-index: 1000;
   backdrop-filter: blur(10px);
+  overflow-x: hidden;
 }
 
 /* Logo Styles */

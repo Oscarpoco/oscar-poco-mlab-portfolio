@@ -1,14 +1,38 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import './App.css';
 import Home from './components/pages/Home';
 import Services from './components/pages/Services';
+import PortfolioSection from './components/pages/Portfolio';
+import AssessmentFeedbackSection from './components/pages/AssessmentFeedbackSection';
+import Footer from './components/pages/Footer';
 
 const App = () => {
-
   const [activeLink, setActiveLink] = useState('#home');
+
+  useEffect(() => {
+    const sections = document.querySelectorAll('section'); // Identify sections
+    const observerOptions = {
+      root: null,
+      threshold: 0.6, // Trigger when 60% of the section is in view
+    };
+
+    const observerCallback = (entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          setActiveLink(`#${entry.target.id}`);
+        }
+      });
+    };
+
+    const observer = new IntersectionObserver(observerCallback, observerOptions);
+    sections.forEach((section) => observer.observe(section));
+
+    return () => observer.disconnect(); // Cleanup on unmount
+  }, []);
 
   const handleLinkClick = (link) => {
     setActiveLink(link);
+    document.querySelector(link).scrollIntoView({ behavior: 'smooth' });
   };
 
   return (
@@ -59,12 +83,26 @@ const App = () => {
             className={activeLink === '#projects' ? 'active' : ''}
             onClick={() => handleLinkClick('#projects')}
           >
-            PROJECTS
+            ASSESSMENTS
           </a>
         </div>
       </nav>
-      <Home />
-      <Services />
+      <section id="home">
+        <Home />
+      </section>
+      <section id="about">
+        <Services />
+      </section>
+
+      <section id="portfolio">
+        <PortfolioSection/>
+      </section>
+      <section id="projects">
+        <AssessmentFeedbackSection/>
+      </section>
+
+      <Footer/>
+      
     </div>
   );
 };

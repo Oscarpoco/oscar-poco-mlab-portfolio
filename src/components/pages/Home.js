@@ -21,16 +21,16 @@ const Home = () => {
             <div className="bio-details">
               <p className="description">Soweto CodeTribe Lab</p>
               <p className="description contact-info">
-                oscarkylepoco@gmail.com / 0660850741
+                oscarkylepoco@gmail.com <br/>0660850741
               </p>
               <p className="description update-info">
-                Last updated : 2024 January 12
+                Last updated : 2025 January 12
               </p>
             </div>
           </div>
 
           <div className="buttons">
-            <button className="btn primary">Hire Me</button>
+            <button className="btn primary" onClick={() => window.location.href = "mailto:oscarkylepoco@gmail.com"}>Hire Me</button>
             <button className="btn secondary">My Resume</button>
           </div>
         </div>
@@ -83,7 +83,7 @@ const Home = () => {
           position: relative;
           color: #ffffff;
           box-sizing: border-box;
-
+          overflow-x: hidden;
         }
 
         .content-wrapper {
