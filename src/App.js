@@ -1,9 +1,16 @@
-import React from 'react';
+import React, { useState } from 'react';
 import './App.css';
 import Home from './components/pages/Home';
 import Services from './components/pages/Services';
 
 const App = () => {
+
+  const [activeLink, setActiveLink] = useState('#home');
+
+  const handleLinkClick = (link) => {
+    setActiveLink(link);
+  };
+
   return (
     <div className="app">
       <nav className="navbar">
@@ -26,14 +33,38 @@ const App = () => {
           </div>
         </div>
         <div className="nav-links">
-          <a href="#home" className="active">HOME</a>
-          <a href="#my-services">SERVICES</a>
-          <a href="#portfolio">PORTFOLIO</a>
-          <a href="#projects">PROJECTS</a>
+          <a
+            href="#home"
+            className={activeLink === '#home' ? 'active' : ''}
+            onClick={() => handleLinkClick('#home')}
+          >
+            HOME
+          </a>
+          <a
+            href="#about"
+            className={activeLink === '#about' ? 'active' : ''}
+            onClick={() => handleLinkClick('#about')}
+          >
+            ABOUT
+          </a>
+          <a
+            href="#portfolio"
+            className={activeLink === '#portfolio' ? 'active' : ''}
+            onClick={() => handleLinkClick('#portfolio')}
+          >
+            PORTFOLIO
+          </a>
+          <a
+            href="#projects"
+            className={activeLink === '#projects' ? 'active' : ''}
+            onClick={() => handleLinkClick('#projects')}
+          >
+            PROJECTS
+          </a>
         </div>
       </nav>
       <Home />
-      <Services/>
+      <Services />
     </div>
   );
 };
