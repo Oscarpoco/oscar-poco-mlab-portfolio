@@ -150,9 +150,9 @@ const PortfolioSection = () => {
             background: var(--card-background);
             border-radius: var(--border-radius);
             padding: 25px;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
             transition: var(--transition);
-            border: 1px solid rgba(0, 0, 0, .7);
+            border: 1px solid rgba(0, 0, 0, .1);
           }
 
           .skill-card:hover {
@@ -202,9 +202,9 @@ const PortfolioSection = () => {
             background: var(--card-background);
             border-radius: var(--border-radius);
             padding: 30px;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
             transition: var(--transition);
-            border: 1px solid rgba(0, 0, 0, .7);
+            border: 1px solid rgba(0, 0, 0, .1);
             position: relative;
             overflow: hidden;
           }

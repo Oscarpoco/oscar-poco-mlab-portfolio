@@ -254,7 +254,7 @@ const Services = () => {
         `}
       </style>
 
-      <h1 className="section-title">About Me</h1>
+      <h1 className="section-title" id='about'>About Me</h1>
 
       <div className="profile-container">
         <div className="profile-image-container">

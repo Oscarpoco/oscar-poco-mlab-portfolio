@@ -1,6 +1,5 @@
-// Home.jsx
+
 import React from 'react';
-import { Code, Database, Server, FileCode } from 'lucide-react';
 
 const Home = () => {
   return (
@@ -56,7 +55,7 @@ const Home = () => {
                 { name: 'Firebase', color: '#FF9800' },
                 { name: 'Node.js', color: '#8BC34A' },
                 { name: 'Express', color: '#607D8B' },
-                { name: 'Python', color: '#3F51B5' }
+                { name: 'Python', color: '#3F51B5' },
               ].map((tech, index) => (
                 <div 
                   key={index} 
