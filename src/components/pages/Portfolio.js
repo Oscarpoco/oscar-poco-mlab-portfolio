@@ -94,10 +94,11 @@ const PortfolioSection = () => {
 
       <style>
         {`
-          :root {
+          :root 
+          {
             --primary-color: #2563eb;
             --secondary-color: #1e40af;
-            --background-color: #f8fafc;
+            --background-color: rgba(0, 0, 0, 0.7);
             --card-background: #ffffff;
             --text-primary: #1e293b;
             --text-secondary: #64748b;
@@ -105,22 +106,26 @@ const PortfolioSection = () => {
             --transition: all 0.3s ease;
           }
 
-          .portfolio-container {
-           width: '100%
+
+          .portfolio-container 
+          {
+            width: 100%;
+            min-height: 100vh;
             margin: 0 auto;
-            padding: 40px 20px;
-            background-color: var(--background-color);
+            padding: 0 3em;
             color: var(--text-primary);
-            border-bottom: 4px solid rgba(0, 0, 0, .5);
-
+            border-bottom: 4px solid rgba(0, 0, 0, 0.2);
+            position: relative;
           }
-
-          section {
+              
+          section 
+          {
             margin-bottom: 60px;
           }
 
 
-          h2 {
+          h2 
+          {
             font-size: 2.5rem;
             color: #2d3748;
             text-align: center;
@@ -128,7 +133,8 @@ const PortfolioSection = () => {
             position: relative;
           }
 
-          h2::after {
+          h2::after 
+          {
             content: '';
             position: absolute;
             bottom: -10px;
@@ -140,13 +146,15 @@ const PortfolioSection = () => {
             border-radius: 2px;
           }
 
-          .skills-grid {
+          .skills-grid 
+          {
             display: grid;
             grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
             gap: 25px;
           }
 
-          .skill-card {
+          .skill-card 
+          {
             background: var(--card-background);
             border-radius: var(--border-radius);
             padding: 25px;
@@ -155,12 +163,14 @@ const PortfolioSection = () => {
             border: 1px solid rgba(0, 0, 0, .1);
           }
 
-          .skill-card:hover {
+          .skill-card:hover 
+          {
             transform: translateY(-5px);
             box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1);
           }
 
-          .skill-card h3 {
+          .skill-card h3 
+          {
             font-size: 1.5rem;
             margin-bottom: 15px;
             color: var(--text-primary);
@@ -327,7 +337,7 @@ const PortfolioSection = () => {
 
           @media (max-width: 768px) {
             .portfolio-container {
-              padding: 20px;
+              padding: 1em;
             }
 
             h2 {

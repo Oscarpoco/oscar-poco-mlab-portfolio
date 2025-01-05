@@ -53,7 +53,7 @@ const AssessmentFeedbackSection = () => {
 
   return (
     <div className="assessment-feedback-container">
-      <section className="assessments-section" id="projects">
+      <section className="assessments-section">
         <h2>Assessments</h2>
         <div className="assessment-grid">
           {assessments.map(assessment => (
@@ -84,11 +84,11 @@ const AssessmentFeedbackSection = () => {
         </div>
       </section>
 
-      <section className="feedback-section" id="projects">
+      <section className="feedback-section">
         <h2>Feedback and Reflections</h2>
         
         <div className="feedback-container">
-          <div className="facilitator-feedback">
+          <div className="feedback-card facilitator-feedback">
             <h3>Facilitator Feedback</h3>
             <ul>
               {feedback.facilitator.map((item, index) => (
@@ -97,7 +97,7 @@ const AssessmentFeedbackSection = () => {
             </ul>
           </div>
 
-          <div className="self-reflection">
+          <div className="feedback-card self-reflection">
             <h3>Self-Reflection</h3>
             <div className="reflection-content">
               <div className="reflection-subsection">
@@ -124,10 +124,16 @@ const AssessmentFeedbackSection = () => {
       <style>
         {`
           .assessment-feedback-container {
-            max-width: 1200px;
+            width: 100%;
+            min-height: 100vh;
             margin: 0 auto;
-            padding: 2rem;
-            font-family: 'Inter', system-ui, -apple-system, sans-serif;
+            padding: 2rem 3em;
+            color: var(--text-primary);
+          }
+
+          .assessments-section,
+          .feedback-section {
+            margin-bottom: 4rem;
           }
 
           h2 {
@@ -139,7 +145,7 @@ const AssessmentFeedbackSection = () => {
           }
 
           h2::after {
-           content: '';
+            content: '';
             position: absolute;
             bottom: -10px;
             left: 50%;
@@ -152,22 +158,24 @@ const AssessmentFeedbackSection = () => {
 
           .assessment-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
             gap: 2rem;
-            margin-bottom: 3rem;
+            width: 100%;
           }
 
-          .assessment-card {
+          .assessment-card,
+          .feedback-card {
             background: white;
             border-radius: 12px;
-            padding: 1.5rem;
+            padding: 1.75rem;
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
             border: 1px solid rgba(0, 0, 0, .1);
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
           }
 
-          .assessment-card:hover {
-            transform: translateY(-5px);
+          .assessment-card:hover,
+          .feedback-card:hover {
+            transform: translateY(-2px);
             box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1);
           }
 
@@ -175,35 +183,44 @@ const AssessmentFeedbackSection = () => {
             display: flex;
             justify-content: space-between;
             align-items: center;
-            margin-bottom: 1rem;
+            margin-bottom: 1.5rem;
+            padding-bottom: 1rem;
+            border-bottom: 2px solid #f0f0f0;
           }
 
           .assessment-header h3 {
             color: #2d3748;
             font-size: 1.25rem;
+            font-weight: 600;
             margin: 0;
           }
 
           .category-tag {
-            background: #ebf5ff;
-            color: #4a90e2;
-            padding: 0.25rem 0.75rem;
+            background: #ebf8ff;
+            color: #3182ce;
+            padding: 0.35rem 1rem;
             border-radius: 20px;
             font-size: 0.875rem;
             font-weight: 500;
+            letter-spacing: 0.025em;
           }
 
           .detail-row {
             display: flex;
             justify-content: space-between;
-            margin-bottom: 0.75rem;
-            padding-bottom: 0.75rem;
+            align-items: center;
+            margin-bottom: 1rem;
+            padding-bottom: 1rem;
             border-bottom: 1px solid #edf2f7;
+          }
+
+          .detail-row:last-of-type {
+            border-bottom: none;
           }
 
           .label {
             color: #718096;
-            font-size: 0.875rem;
+            font-size: 0.925rem;
           }
 
           .value {
@@ -218,52 +235,58 @@ const AssessmentFeedbackSection = () => {
 
           .git-link {
             display: inline-block;
-            margin-top: 1rem;
-            padding: 0.5rem 1rem;
-            background: #4a90e2;
+            width: 100%;
+            padding: 0.75rem;
+            background: #4299e1;
             color: white;
+            text-align: center;
             font-weight: 500;
             text-decoration: none;
-            border-radius: 25px;
-            transition: background 0.3s ease;
+            border-radius: 8px;
+            transition: background 0.2s ease;
+            margin-top: 1rem;
           }
 
           .git-link:hover {
-            background: #357abd;
+            background: #3182ce;
           }
 
           .feedback-container {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
             gap: 2rem;
+            width: 100%;
           }
 
-          .facilitator-feedback,
-          .self-reflection {
+          .feedback-card {
             background: white;
-            border-radius: 12px;
-            padding: 1.5rem;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+            border: 1px solid rgba(0, 0, 0, .1);
+
           }
 
-          h3 {
+          .feedback-card h3 {
             color: #2d3748;
             font-size: 1.5rem;
             margin-bottom: 1.5rem;
+            padding-bottom: 1rem;
+            border-bottom: 2px solid #f0f0f0;
           }
 
-          h4 {
+          .feedback-card h4 {
             color: #4a5568;
             font-size: 1.1rem;
             margin-bottom: 1rem;
+            font-weight: 600;
           }
 
-          ul {
+          .feedback-card ul {
             list-style-type: none;
             padding: 0;
+            margin: 0;
           }
 
-          li {
+          .feedback-card li {
             position: relative;
             padding-left: 1.5rem;
             margin-bottom: 1rem;
@@ -271,11 +294,11 @@ const AssessmentFeedbackSection = () => {
             line-height: 1.6;
           }
 
-          li::before {
+          .feedback-card li::before {
             content: '•';
             position: absolute;
             left: 0;
-            color: #4a90e2;
+            color: #4299e1;
             font-weight: bold;
           }
 
@@ -283,9 +306,13 @@ const AssessmentFeedbackSection = () => {
             margin-bottom: 2rem;
           }
 
+          .reflection-subsection:last-child {
+            margin-bottom: 0;
+          }
+
           @media (max-width: 768px) {
             .assessment-feedback-container {
-              padding: 1rem;
+              padding: 1em;
             }
 
             .assessment-grid,
@@ -294,23 +321,33 @@ const AssessmentFeedbackSection = () => {
             }
 
             h2 {
-              font-size: 1.75rem;
+              font-size: 2rem;
+            }
+
+            .assessment-card,
+            .feedback-card {
+              padding: 1.25rem;
             }
           }
 
           @media (prefers-color-scheme: dark) {
             .assessment-feedback-container {
               background: #1a202c;
+              color: #e2e8f0;
             }
 
             .assessment-card,
-            .facilitator-feedback,
-            .self-reflection {
+            .feedback-card {
               background: #2d3748;
+              border-color: rgba(255, 255, 255, 0.1);
             }
 
             h2, h3, h4 {
               color: #e2e8f0;
+            }
+
+            .assessment-header {
+              border-bottom-color: #4a5568;
             }
 
             .value, li {
@@ -322,10 +359,15 @@ const AssessmentFeedbackSection = () => {
             }
 
             .category-tag {
-              background: rgba(74, 144, 226, 0.2);
+              background: rgba(66, 153, 225, 0.2);
+              color: #63b3ed;
             }
 
             .detail-row {
+              border-bottom-color: #4a5568;
+            }
+
+            .feedback-card h3 {
               border-bottom-color: #4a5568;
             }
           }

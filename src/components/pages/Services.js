@@ -34,13 +34,18 @@ const Services = () => {
     <section className="services-section" id='about'>
       <style>
         {`
-          .services-section {
-            padding: 4rem 1.5rem;
+
+          .services-section 
+          {
             width: 100%;
             margin: 0 auto;
-            box-sizing: border-box;
+            padding: 3em;
+            min-height: 100vh;
+            color: var(--text-primary);
+            border-bottom: 4px solid rgba(0, 0, 0, 0.2);
+            position: relative;
             overflow-x: hidden;
-            border-bottom: 4px solid rgba(0, 0, 0, .5);
+            box-sizing: border-box;
           }
 
           .section-title {
@@ -72,7 +77,7 @@ const Services = () => {
           .profile-image-container {
             position: relative;
             border-radius: 20px;
-            background: linear-gradient(135deg,rgba(66, 153, 225, 0.36),rgba(102, 126, 234, 0.31));
+            background: linear-gradient(135deg,rgba(66, 153, 225, 0.4),rgba(102, 126, 234, 0.4));
           }
 
           .profile-image {
@@ -226,12 +231,17 @@ const Services = () => {
           }
 
           @media (max-width: 768px) {
+
+          .services-section 
+          {
+            padding: 1em;
+          }
             .profile-container {
               grid-template-columns: 1fr;
             }
 
             .profile-image-container {
-              min-height: 300px;
+              min-height: 350px;
             }
 
             /* Tooltip styles */
@@ -239,6 +249,11 @@ const Services = () => {
              
               white-space: wrap;
               
+            }
+
+            .profile-content 
+            {
+            padding: 2rem .5rem;
             }
 
             .tabs {

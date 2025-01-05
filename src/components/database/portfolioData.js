@@ -26,7 +26,7 @@ export const individualProjects = [
     techStack: ['React', 'CSS', 'Firebase'],
     features: ['Hotel booking system', 'Reservation management', 'User authentication'],
     challenges: 'Implemented real-time availability updates while maintaining booking consistency across multiple users.',
-    links: { github: 'https://github.com/Oscarpoco/hotel-application', demo: 'hotel-application-beta.vercel.app' }
+    links: { github: 'https://github.com/Oscarpoco/hotel-application', demo: 'https://hotel-application-beta.vercel.app' }
   },
   {
     title: 'Hotel CMS',
@@ -34,7 +34,7 @@ export const individualProjects = [
     techStack: ['React', 'Firebase', 'CSS'],
     features: ['Booking management', 'Room inventory control', 'Staff administration'],
     challenges: 'Designed an intuitive interface for managing complex booking scenarios and room assignments.',
-    links: { github: 'https://github.com/Oscarpoco/hotel-management-system', demo: 'hotel-management-system-iota.vercel.app' }
+    links: { github: 'https://github.com/Oscarpoco/hotel-management-system', demo: 'https://hotel-management-system-iota.vercel.app' }
   },
   {
     title: 'Recording App',

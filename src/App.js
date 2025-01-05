@@ -6,14 +6,47 @@ import PortfolioSection from './components/pages/Portfolio';
 import AssessmentFeedbackSection from './components/pages/AssessmentFeedbackSection';
 import Footer from './components/pages/Footer';
 
+// SCROLL PROGRESS COMPONENT
+const ScrollProgress = () => {
+  const [scrollProgress, setScrollProgress] = useState(0);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      const totalScroll = document.documentElement.scrollHeight - window.innerHeight;
+      const currentProgress = (window.pageYOffset / totalScroll) * 100;
+      setScrollProgress(currentProgress);
+    };
+
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
+
+  return (
+    <div 
+      className="scroll-progress"
+      style={{
+        position: 'fixed',
+        top: 0,
+        left: 0,
+        height: '7px',
+        width: `${scrollProgress}%`,
+        background: 'var(--accent-green)',
+        zIndex: 1001,
+        transition: 'width 0.1s ease-out'
+      }}
+    />
+  );
+};
+
 const App = () => {
   const [activeLink, setActiveLink] = useState('#home');
 
+  // INTERSECTION OBSERVER FOR ACTIVE SECTION DETECTION
   useEffect(() => {
-    const sections = document.querySelectorAll('section'); // Identify sections
+    const sections = document.querySelectorAll('section');
     const observerOptions = {
       root: null,
-      threshold: 0.6, // Trigger when 60% of the section is in view
+      threshold: 0.6, 
     };
 
     const observerCallback = (entries) => {
@@ -27,9 +60,10 @@ const App = () => {
     const observer = new IntersectionObserver(observerCallback, observerOptions);
     sections.forEach((section) => observer.observe(section));
 
-    return () => observer.disconnect(); // Cleanup on unmount
+    return () => observer.disconnect(); 
   }, []);
 
+  // SMOOTH SCROLL HANDLER
   const handleLinkClick = (link) => {
     setActiveLink(link);
     document.querySelector(link).scrollIntoView({ behavior: 'smooth' });
@@ -37,6 +71,7 @@ const App = () => {
 
   return (
     <div className="app">
+      <ScrollProgress />
       <nav className="navbar">
         <div className="logo-container">
           <div className="logo">
@@ -87,13 +122,13 @@ const App = () => {
           </a>
         </div>
       </nav>
+      
       <section id="home">
         <Home />
       </section>
       <section id="about">
         <Services />
       </section>
-
       <section id="portfolio">
         <PortfolioSection/>
       </section>
@@ -102,7 +137,6 @@ const App = () => {
       </section>
 
       <Footer/>
-      
     </div>
   );
 };
