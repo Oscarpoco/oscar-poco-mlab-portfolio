@@ -77,7 +77,6 @@ const Services = () => {
           .profile-image-container {
             position: relative;
             border-radius: 20px;
-            background: #000;
           }
 
           .profile-image {
@@ -93,6 +92,7 @@ const Services = () => {
             box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
             opacity: ${isImageLoaded ? 1 : 0};
             transition: opacity 0.3s ease;
+            background: #000;
           }
 
           .profile-image img {
@@ -185,7 +185,7 @@ const Services = () => {
             align-items: flex-start;
             gap: 1rem;
             padding: 1rem;
-            background: rgba(255, 255, 255, 0.7);
+            background: rgba(255, 255, 255, 0.8);
             border-radius: 8px;
             transition: transform 0.3s ease, box-shadow 0.3s ease;
             box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);

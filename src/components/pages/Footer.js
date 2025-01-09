@@ -50,7 +50,7 @@ const Footer = () => {
       <style>
         {`
           .footer {
-            background: #1a202c;
+            background: #0a0a0a;
             color: #fff;
             padding: 4rem 0 2rem;
             position: relative;

@@ -99,7 +99,7 @@ const PortfolioSection = () => {
             --primary-color: #2563eb;
             --secondary-color: #1e40af;
             --background-color: rgba(0, 0, 0, 0.7);
-            --card-background: #ffffff;
+            --card-background:rgba(255, 255, 255, 0.8);
             --text-primary: #1e293b;
             --text-secondary: #64748b;
             --border-radius: 12px;
@@ -114,7 +114,7 @@ const PortfolioSection = () => {
             margin: 0 auto;
             padding: 0 3em;
             color: var(--text-primary);
-            border-bottom: 4px solid rgba(0, 0, 0, 0.2);
+            border-bottom: 4px solid rgba(255, 255, 255, 0.2);
             position: relative;
           }
               

@@ -138,7 +138,7 @@ const AssessmentFeedbackSection = () => {
 
           h2 {
             font-size: 2.5rem;
-            color: #2d3748;
+            color: #f5f5f5;
             text-align: center;
             margin-bottom: 3rem;
             position: relative;
@@ -165,7 +165,7 @@ const AssessmentFeedbackSection = () => {
 
           .assessment-card,
           .feedback-card {
-            background: white;
+            background: rgba(255, 255, 255, .8);
             border-radius: 12px;
             padding: 1.75rem;
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
@@ -259,7 +259,7 @@ const AssessmentFeedbackSection = () => {
           }
 
           .feedback-card {
-            background: white;
+            background: rgba(255, 255, 255, .8);
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
             border: 1px solid rgba(0, 0, 0, .1);
 
