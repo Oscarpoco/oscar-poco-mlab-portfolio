@@ -24,7 +24,8 @@ const Home = () => {
 
   return (
     <div className="home">
-      {/* Hero Section */}
+
+      {/* HERO SECTION */}
       <section className="hero" id='home'>
         <div className={`hero-content ${isVisible ? 'visible' : ''}`}>
           <div className="hero-text">
@@ -71,6 +72,8 @@ const Home = () => {
             </div>
           </div>
 
+
+          {/* LAPTOP SECTION */}
           <div className="laptop-container">
             <div className="laptop">
               <div className="laptop-screen">
@@ -99,11 +102,12 @@ const Home = () => {
         </div>
       </section>
 
+      {/* STLYING */}
       <style>{`
         .home {
           background-color: #0a0a0a;
           color: #ffffff;
-          min-height: 100vh;
+          min-height: 90vh;
           font-family: 'Inter', system-ui, sans-serif;
           padding: 0 20px;
           position: relative;
