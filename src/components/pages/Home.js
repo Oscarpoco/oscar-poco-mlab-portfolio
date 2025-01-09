@@ -1,14 +1,20 @@
 import React, { useEffect, useState } from 'react';
+import { individualProjects } from '../database/portfolioData';
+import { groupProjects } from '../database/portfolioData';
 
 const Home = () => {
   const [isVisible, setIsVisible] = useState(false);
+
+  const experience = 1;
+  const clients = 10;
+  const count = (individualProjects.length) + (groupProjects.length);
 
   useEffect(() => {
     setIsVisible(true);
   }, []);
 
   const contactInfo = [
-    "// Contact Information",
+    "// Contact Info last updated : 12 / 01 /2025",
     "const contact = {",
     "  location: 'Soweto CodeTribe Lab',",
     "  email: 'oscarkylepoco@gmail.com',",
@@ -51,12 +57,12 @@ const Home = () => {
 
             <div className="stats-grid">
               {[
-                { number: "3+", label: "Years Experience" },
-                { number: "50+", label: "Projects Completed" },
-                { number: "10+", label: "Happy Clients" }
+                { number: experience, label: "Years Experience" },
+                { number: count, label: "Projects Completed" },
+                { number: clients, label: "Happy Clients" }
               ].map((stat, index) => (
                 <div className="stat-card" key={index}>
-                  <span className="stat-number">{stat.number}</span>
+                  <span className="stat-number">{stat.number} +</span>
                   <span className="stat-label">{stat.label}</span>
                   <div className="card-glow"></div>
                   <div className="card-shine"></div>
@@ -102,6 +108,7 @@ const Home = () => {
           padding: 0 20px;
           position: relative;
           overflow: hidden;
+          box-sizing: border-box;
         }
 
         .hero {

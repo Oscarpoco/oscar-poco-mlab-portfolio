@@ -104,7 +104,7 @@ body
   justify-content: space-between;
   align-items: center;
   padding: 1.5rem max(4rem, 5%);
-  background-color: #1a1a1a;
+  background-color: #000;
   color: var(--text-light);
   box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
   position: sticky;
@@ -154,15 +154,16 @@ body
 .letter:not(.symbol) 
 {
   color: var(--accent-green);
-  text-shadow: var(--glow-green);
+  /* text-shadow: var(--glow-green); */
+  font-weight: 900;
   animation: float 3s ease-in-out infinite;
 }
 
 .symbol 
 {
   color: var(--accent-blue);
-  font-weight: 700;
-  text-shadow: var(--glow-blue);
+  font-weight: 900;
+  /* text-shadow: var(--glow-blue); */
   transform: scale(0.8);
 }
 
@@ -376,9 +377,15 @@ body
     flex-direction: column;
   }
 
+  .logo-container{
+    justify-content: start;
+    width: 100%;
+  }
+
   .logo {
-    font-size: 1rem;
+    font-size: .8rem;
     letter-spacing: 0.0625rem;
+    justify-content: start;
   }
 
   .bracket {
