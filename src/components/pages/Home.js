@@ -1,318 +1,518 @@
-
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 
 const Home = () => {
+  const [isVisible, setIsVisible] = useState(false);
+
+  useEffect(() => {
+    setIsVisible(true);
+  }, []);
+
+  const contactInfo = [
+    "// Contact Information",
+    "const contact = {",
+    "  location: 'Soweto CodeTribe Lab',",
+    "  email: 'oscarkylepoco@gmail.com',",
+    "  phone: '0660850741'",
+    "};"
+  ];
+
   return (
-    <div className="home" id="home">
-      <div className="content-wrapper">
-        <div className="left-content">
-          <div className="name-section">
-            <h1 className="name">Oscar Kyle Poco</h1>
-            <div className="title-bar"></div>
-          </div>
-
-          <div className="tech-bio">
-            <p className="subtitle">MERN Stack Developer</p>
-            <p className="description hero-text">
-              I am a superhero, unshaken by fear and always ready to conquer challenges.
+    <div className="home">
+      {/* Hero Section */}
+      <section className="hero" id='home'>
+        <div className={`hero-content ${isVisible ? 'visible' : ''}`}>
+          <div className="hero-text">
+            <div className="name-wrapper">
+              <h1 className="glitch-text">Oscar Kyle Poco</h1>
+              <div className="glitch-overlay"></div>
+            </div>
+            <div className="title-wrapper">
+              <h3 className='title-text'>MERN Stack Developer</h3>
+              <div className="title-decoration"></div>
+            </div>
+            <p>
+              Building digital experiences that matter. Unshaken by fear and always ready to conquer challenges.
             </p>
-            
-            <div className="bio-details">
-              <p className="description">Soweto CodeTribe Lab</p>
-              <p className="description contact-info">
-                oscarkylepoco@gmail.com <br/>0660850741
-              </p>
-              <p className="description update-info">
-                Last updated : 2025 January 12
-              </p>
+            <div className="cta-container">
+              <button 
+                className="cta-primary" 
+                onClick={() => window.location.href = "mailto:oscarkylepoco@gmail.com"}
+              >
+                Let's Work Together
+                <span className="btn-glow"></span>
+                <span className="btn-shine"></span>
+              </button>
+              <button className="cta-secondary">
+                View Portfolio
+                <span className="btn-line"></span>
+                <span className="btn-highlight"></span>
+              </button>
             </div>
-          </div>
 
-          <div className="buttons">
-            <button className="btn primary" onClick={() => window.location.href = "mailto:oscarkylepoco@gmail.com"}>Hire Me</button>
-            <button className="btn secondary">My Resume</button>
-          </div>
-        </div>
-
-        <div className="right-content">
-          <div className="code-window">
-            <div className="window-header">
-              <div className="dots">
-                <span className="dot"></span>
-                <span className="dot"></span>
-                <span className="dot"></span>
-              </div>
-              <span className="window-title">Tech Stack</span>
-            </div>
-            <div className="tech-grid">
+            <div className="stats-grid">
               {[
-                { name: 'HTML', color: '#FF5722' },
-                { name: 'CSS', color: '#2196F3' },
-                { name: 'JavaScript', color: '#FFC107' },
-                { name: 'React', color: '#61DAFB' },
-                { name: 'React Native', color: '#61DAFB' },
-                { name: 'MongoDB', color: '#4CAF50' },
-                { name: 'Firebase', color: '#FF9800' },
-                { name: 'Node.js', color: '#8BC34A' },
-                { name: 'Express', color: '#607D8B' },
-                { name: 'Python', color: '#3F51B5' },
-              ].map((tech, index) => (
-                <div 
-                  key={index} 
-                  className="tech-card"
-                  style={{'--card-color': tech.color}}
-                >
-                  {tech.name}
+                { number: "3+", label: "Years Experience" },
+                { number: "50+", label: "Projects Completed" },
+                { number: "10+", label: "Happy Clients" }
+              ].map((stat, index) => (
+                <div className="stat-card" key={index}>
+                  <span className="stat-number">{stat.number}</span>
+                  <span className="stat-label">{stat.label}</span>
+                  <div className="card-glow"></div>
+                  <div className="card-shine"></div>
                 </div>
               ))}
             </div>
           </div>
+
+          <div className="laptop-container">
+            <div className="laptop">
+              <div className="laptop-screen">
+                <div className="laptop-content">
+                  {contactInfo.map((line, index) => (
+                    <div 
+                      key={index}
+                      className="code-line"
+                      style={{
+                        animationDelay: `${index * 0.5}s`,
+                        width: '100%'
+                      }}
+                    >
+                      {line}
+                    </div>
+                  ))}
+                </div>
+              </div>
+              <div className="laptop-base">
+                <div className="laptop-keyboard"></div>
+                <div className="laptop-touchpad"></div>
+              </div>
+            </div>
+            <div className="laptop-shadow"></div>
+          </div>
         </div>
-      </div>
+      </section>
 
       <style>{`
         .home {
-          min-height: 100vh;
-          background: #131313;
-          background-image: 
-            radial-gradient(at 40% 20%, rgba(28, 107, 238, 0.1) 0px, transparent 50%),
-            radial-gradient(at 80% 0%, rgba(238, 28, 197, 0.1) 0px, transparent 50%),
-            radial-gradient(at 0% 50%, rgba(28, 238, 183, 0.1) 0px, transparent 50%);
-          padding: 2rem;
-          position: relative;
+          background-color: #0a0a0a;
           color: #ffffff;
-          box-sizing: border-box;
-          overflow-x: hidden;
+          min-height: 100vh;
+          font-family: 'Inter', system-ui, sans-serif;
+          padding: 0 20px;
+          position: relative;
+          overflow: hidden;
         }
 
-        .content-wrapper {
+        .hero {
           max-width: 1400px;
           margin: 0 auto;
+          padding: 120px 0;
+        }
+
+        .hero-content {
+          opacity: 0;
+          transform: translateY(20px);
+          transition: all 0.8s cubic-bezier(0.16, 1, 0.3, 1);
           display: grid;
           grid-template-columns: 1fr 1fr;
-          gap: 4rem;
+          gap: 40px;
           align-items: center;
-          padding-top: 4rem;
         }
 
-        .name-section {
-          margin-bottom: 2rem;
+        .laptop-container {
+          position: relative;
+          width: 100%;
+          padding-top: 20px;
+          transform: perspective(1000px) rotateY(-20deg) rotateX(5deg);
+          transition: transform 0.3s ease;
         }
 
-        .name {
-          font-size: 4.5rem;
-          font-weight: 800;
-          color: #ffffff;
-          margin-bottom: 1rem;
-          line-height: 1.1;
-          letter-spacing: -1px;
-          animation: slideIn 0.8s ease-out;
+        .laptop-container:hover {
+          transform: perspective(1000px) rotateY(-15deg) rotateX(5deg);
         }
 
-        .title-bar {
-          width: 120px;
-          height: 4px;
-          background: #3498db;
-          margin-top: 1rem;
-          animation: expandWidth 0.8s ease-out;
+        .laptop {
+          width: 100%;
+          max-width: 600px;
+          margin: 0 auto;
         }
 
-        .tech-bio {
-          background: rgba(255, 255, 255, 0.03);
-          border: 1px solid rgba(255, 255, 255, 0.1);
-          padding: 2rem;
-          border-radius: 16px;
-          margin-bottom: 2rem;
-          backdrop-filter: blur(10px);
-        }
-
-        .subtitle {
-          font-size: 1.8rem;
-          font-weight: 600;
-          color: #3498db;
-          margin-bottom: 1.5rem;
-        }
-
-        .description {
-          color: #b3b3b3;
-          line-height: 1.7;
-          font-size: 1.1rem;
-          margin-bottom: 1rem;
-        }
-
-        .hero-text {
-          color: #e6e6e6;
-          font-size: 1.3rem;
-          font-weight: 500;
-        }
-
-        .contact-info {
-          color: #3498db;
-          font-family: 'Roboto Mono', monospace;
-        }
-
-        .update-info {
-          color: #666;
-          font-size: 0.9rem;
-        }
-
-        .buttons {
-          display: flex;
-          gap: 1.5rem;
-          margin-top: 2.5rem;
-        }
-
-        .btn {
-          padding: 1rem 2.5rem;
-          border-radius: 8px;
-          font-size: 1rem;
-          font-weight: 600;
-          cursor: pointer;
-          transition: all 0.3s ease;
-          text-transform: uppercase;
-          letter-spacing: 1px;
-        }
-
-        .primary {
-          background: #3498db;
-          color: white;
-          border: none;
-          box-shadow: 0 4px 15px rgba(52, 152, 219, 0.3);
-        }
-
-        .primary:hover {
-          background: #2980b9;
-          transform: translateY(-2px);
-        }
-
-        .secondary {
-          background: transparent;
-          color: #3498db;
-          border: 2px solid #3498db;
-        }
-
-        .secondary:hover {
-          background: rgba(52, 152, 219, 0.1);
-        }
-
-        .code-window {
+        .laptop-screen {
           background: #1a1a1a;
-          border-radius: 16px;
+          border-radius: 10px 10px 0 0;
+          padding: 2px;
+          border: 2px solid #333;
+          border-bottom: none;
+          aspect-ratio: 16/10;
+          position: relative;
           overflow: hidden;
-          box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
-          animation: slideUp 0.8s ease-out;
         }
 
-        .window-header {
-          background: #252525;
-          padding: 1rem;
-          display: flex;
-          align-items: center;
-          gap: 1rem;
+        .laptop-content {
+          background: #0a0a0a;
+          width: 100%;
+          height: 100%;
+          padding: 20px;
+          position: relative;
+          font-family: 'SF Mono', 'Fira Code', monospace;
+          color: #a0aec0;
         }
 
-        .dots {
-          display: flex;
-          gap: 6px;
+        .code-line {
+          height: auto;
+          padding: 8px;
+          margin-bottom: 10px;
+          border-radius: 2px;
+          opacity: 0;
+          animation: fadeIn 0.5s forwards;
+          white-space: pre;
+          font-size: 14px;
         }
 
-        .dot {
-          width: 12px;
-          height: 12px;
-          border-radius: 50%;
-        }
+        .code-line:nth-child(1) { color: #4facfe; }
+        .code-line:nth-child(2) { color: #00f2fe; }
+        .code-line:nth-child(3),
+        .code-line:nth-child(4),
+        .code-line:nth-child(5) { color: #a0aec0; padding-left: 24px; }
 
-        .dot:nth-child(1) { background: #ff5f56; }
-        .dot:nth-child(2) { background: #ffbd2e; }
-        .dot:nth-child(3) { background: #27c93f; }
-
-        .window-title {
-          color: #999;
-          font-size: 0.9rem;
-          margin-left: 1rem;
-        }
-
-        .tech-grid {
-          display: grid;
-          grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
-          gap: 1rem;
-          padding: 1.5rem;
-        }
-
-        .tech-card {
-          background: rgba(255, 255, 255, 0.03);
-          padding: 1rem;
-          border-radius: 8px;
-          text-align: center;
-          color: var(--card-color);
-          border: 1px solid rgba(255, 255, 255, 0.1);
-          transition: all 0.3s ease;
-        }
-
-        .tech-card:hover {
-          transform: translateY(-2px);
-          background: rgba(255, 255, 255, 0.06);
-          box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
-        }
-
-        @keyframes slideIn {
-          from {
+        @keyframes fadeIn {
+          from { 
             opacity: 0;
-            transform: translateX(-50px);
+            transform: translateY(10px);
           }
-          to {
-            opacity: 1;
-            transform: translateX(0);
-          }
-        }
-
-        @keyframes slideUp {
-          from {
-            opacity: 0;
-            transform: translateY(50px);
-          }
-          to {
+          to { 
             opacity: 1;
             transform: translateY(0);
           }
         }
 
-        @keyframes expandWidth {
-          from {
-            width: 0;
-          }
-          to {
-            width: 120px;
-          }
+        .laptop-base {
+          background: linear-gradient(to bottom, #333, #1a1a1a);
+          height: 15px;
+          border-radius: 0 0 10px 10px;
+          position: relative;
         }
 
-        @media (max-width: 1200px) {
-          .content-wrapper {
+        .laptop-keyboard {
+          position: absolute;
+          width: 40%;
+          height: 4px;
+          background: #111;
+          left: 50%;
+          transform: translateX(-50%);
+          top: 5px;
+          border-radius: 2px;
+        }
+
+        .laptop-touchpad {
+          position: absolute;
+          width: 20%;
+          height: 2px;
+          background: #111;
+          left: 50%;
+          transform: translateX(-50%);
+          bottom: 3px;
+          border-radius: 1px;
+        }
+
+        .hero-content.visible {
+          opacity: 1;
+          transform: translateY(0);
+        }
+
+        .name-wrapper {
+          position: relative;
+          display: inline-block;
+        }
+
+        .glitch-text {
+          font-size: 4.5rem;
+          font-weight: 800;
+          margin-bottom: 1rem;
+          background: linear-gradient(45deg, #00f2fe, #4facfe);
+          -webkit-background-clip: text;
+          -webkit-text-fill-color: transparent;
+          position: relative;
+          z-index: 1;
+        }
+
+        .glitch-overlay {
+          position: absolute;
+          top: 0;
+          left: 0;
+          width: 100%;
+          height: 100%;
+          background: linear-gradient(45deg, rgba(0,242,254,0.2), rgba(79,172,254,0.2));
+          filter: blur(20px);
+          opacity: 0;
+          transition: opacity 0.3s ease;
+          z-index: 0;
+        }
+
+        .name-wrapper:hover .glitch-overlay {
+          opacity: 1;
+        }
+
+        .title-wrapper {
+          position: relative;
+          margin-bottom: 1rem;
+        }
+
+        .title-wrapper .title-text {
+          font-size: 2rem;
+          color: #a0aec0;
+          margin: 0;
+          transition: color 0.3s ease;
+        }
+
+        .title-decoration {
+          height: 2px;
+          width: 60px;
+          margin-top: 8px;
+          position: relative;
+          overflow: hidden;
+        }
+
+        .title-decoration::after {
+          content: '';
+          position: absolute;
+          top: 0;
+          left: -100%;
+          width: 100%;
+          height: 100%;
+          background: rgba(255,255,255,0.3);
+          transform: skewX(-20deg);
+          animation: shimmer 3s infinite;
+        }
+
+        @keyframes shimmer {
+          100% { left: 200%; }
+        }
+
+        .hero-text p {
+          font-size: 1.25rem;
+          color: #a0aec0;
+          line-height: 1.6;
+          margin-bottom: 2.5rem;
+          max-width: 600px;
+        }
+
+        .cta-container {
+          display: flex;
+          gap: 20px;
+          margin-bottom: 60px;
+        }
+
+        .cta-primary, .cta-secondary {
+          padding: 15px 30px;
+          border-radius: 8px;
+          font-size: 1rem;
+          font-weight: 600;
+          cursor: pointer;
+          position: relative;
+          overflow: hidden;
+          transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        .cta-primary {
+          background: linear-gradient(45deg, #00f2fe, #4facfe);
+          border: none;
+          color: white;
+        }
+
+        .btn-shine {
+          position: absolute;
+          top: -50%;
+          left: -50%;
+          width: 200%;
+          height: 200%;
+          background: linear-gradient(
+            45deg,
+            transparent 45%,
+            rgba(255,255,255,0.3) 50%,
+            transparent 55%
+          );
+          transform: translate(-100%, -100%);
+          transition: transform 0.6s ease;
+        }
+
+        .cta-primary:hover .btn-shine,
+        .cta-secondary:hover .btn-shine {
+          transform: translate(100%, 100%);
+        }
+
+        .cta-secondary {
+          background: transparent;
+          border: 2px solid #4facfe;
+          color: #4facfe;
+        }
+
+        .btn-line {
+          position: absolute;
+          bottom: 0;
+          left: 0;
+          width: 100%;
+          height: 2px;
+          background: linear-gradient(90deg, #00f2fe, #4facfe);
+          transform: scaleX(0);
+          transform-origin: left;
+          transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        .btn-highlight {
+          position: absolute;
+          top: 0;
+          left: 0;
+          width: 100%;
+          height: 100%;
+          background: rgba(79,172,254,0.1);
+          opacity: 0;
+          transition: opacity 0.3s ease;
+        }
+
+        .cta-secondary:hover .btn-line {
+          transform: scaleX(1);
+        }
+
+        .cta-secondary:hover .btn-highlight {
+          opacity: 1;
+        }
+
+        .stats-grid {
+          display: grid;
+          grid-template-columns: repeat(3, 1fr);
+          gap: 25px;
+          margin-top: 40px;
+        }
+
+        .stat-card {
+          background: rgba(255, 255, 255, 0.03);
+          border: 1px solid rgba(255, 255, 255, 0.1);
+          padding: 30px;
+          border-radius: 15px;
+          position: relative;
+          overflow: hidden;
+          backdrop-filter: blur(10px);
+          transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        .stat-card:hover {
+          transform: translateY(-5px);
+          border-color: rgba(79,172,254,0.3);
+        }
+
+        .card-shine {
+          position: absolute;
+          top: -100%;
+          left: -100%;
+          width: 300%;
+          height: 300%;
+          background: linear-gradient(
+            45deg,
+            transparent 45%,
+            rgba(79,172,254,0.1) 50%,
+            transparent 55%
+          );
+          transform: rotate(45deg);
+          transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        .stat-card:hover .card-shine {
+          transform: rotate(45deg) translate(50%, 50%);
+        }
+
+        .stat-number {
+          display: block;
+          font-size: 2.5rem;
+          font-weight: 700;
+          background: linear-gradient(45deg, #00f2fe, #4facfe);
+          -webkit-background-clip: text;
+          -webkit-text-fill-color: transparent;
+          margin-bottom: 10px;
+          position: relative;
+        }
+
+        .stat-label {
+          color: #a0aec0;
+          font-size: 0.9rem;
+          transition: color 0.3s ease;
+        }
+
+        .stat-card:hover .stat-label {
+          color: #4facfe;
+        }
+
+       
+        @media (max-width: 1024px) {
+          .hero-content {
             grid-template-columns: 1fr;
-            gap: 3rem;
+            gap: 60px;
           }
 
-          .name {
+          .laptop-container {
+            order: -1;
+            transform: perspective(1000px) rotateY(0) rotateX(5deg);
+            max-width: 500px;
+            margin: 0 auto;
+          }
+
+          .glitch-text {
             font-size: 3.5rem;
+          }
+
+          .stats-grid {
+            grid-template-columns: repeat(2, 1fr);
           }
         }
 
         @media (max-width: 768px) {
-          .home {
-            padding: 1.5rem;
+          .hero {
+            padding: 40px 0;
           }
 
-          .name {
-            font-size: 2.8rem;
+          .hero-content {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
           }
 
-          .buttons {
+          .laptop-container {
+            transform: none;
+            max-width: 100%;
+          }
+
+          .laptop-container:hover {
+            transform: none;
+          }
+
+          .laptop-content {
+            padding: 10px;
+          }
+
+          .code-line {
+            font-size: 11px;
+            padding: 4px;
+            margin-bottom: 6px;
+          }
+
+
+          .glitch-text {
+            font-size: 2.5rem;
+          }
+
+          .title-wrapper .title-text {
+            font-size: 1.5rem;
+          }
+
+          .cta-container {
             flex-direction: column;
           }
 
-          .tech-grid {
-            grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
+          .stats-grid {
+            grid-template-columns: 1fr;
           }
+
         }
       `}</style>
     </div>
