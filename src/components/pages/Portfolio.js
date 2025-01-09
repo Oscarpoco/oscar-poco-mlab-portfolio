@@ -127,7 +127,7 @@ const PortfolioSection = () => {
           h2 
           {
             font-size: 2.5rem;
-            color: #2d3748;
+            color: #f5f5f5;
             text-align: center;
             margin-bottom: 3rem;
             position: relative;

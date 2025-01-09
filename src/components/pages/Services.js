@@ -42,7 +42,7 @@ const Services = () => {
             padding: 3em;
             min-height: 100vh;
             color: var(--text-primary);
-            border-bottom: 4px solid rgba(0, 0, 0, 0.2);
+            border-bottom: 4px solid rgba(255, 255, 255, 0.2);
             position: relative;
             overflow-x: hidden;
             box-sizing: border-box;
@@ -50,7 +50,7 @@ const Services = () => {
 
           .section-title {
             font-size: 2.5rem;
-            color: #2d3748;
+            color: #f5f5f5;
             text-align: center;
             margin-bottom: 3rem;
             position: relative;
@@ -77,7 +77,7 @@ const Services = () => {
           .profile-image-container {
             position: relative;
             border-radius: 20px;
-            background: linear-gradient(135deg,rgba(66, 153, 225, 0.4),rgba(102, 126, 234, 0.4));
+            background: #000;
           }
 
           .profile-image {
@@ -121,7 +121,7 @@ const Services = () => {
               padding: 0.75rem 1.5rem;
               border: none;
               background: none;
-              color: #4a5568;
+              color: #f5f5f5;
               font-size: 1rem;
               font-weight: 500;
               cursor: pointer;
