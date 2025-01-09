@@ -110,7 +110,7 @@ const PortfolioSection = () => {
           .portfolio-container 
           {
             width: 100%;
-            min-height: 100vh;
+            min-height: 90vh;
             margin: 0 auto;
             padding: 0 3em;
             color: var(--text-primary);

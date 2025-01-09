@@ -40,7 +40,7 @@ const Services = () => {
             width: 100%;
             margin: 0 auto;
             padding: 3em;
-            min-height: 100vh;
+            min-height: 90vh;
             color: var(--text-primary);
             border-bottom: 4px solid rgba(255, 255, 255, 0.2);
             position: relative;
@@ -89,7 +89,7 @@ const Services = () => {
             height: 300px;
             border-radius: 50%;
             overflow: hidden;
-            border: 4px solid #ffffff;
+            border: 4px solid rgba(255, 255, 255, 0.7);
             box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
             opacity: ${isImageLoaded ? 1 : 0};
             transition: opacity 0.3s ease;
@@ -185,7 +185,7 @@ const Services = () => {
             align-items: flex-start;
             gap: 1rem;
             padding: 1rem;
-            background: #f7fafc;
+            background: rgba(255, 255, 255, 0.7);
             border-radius: 8px;
             transition: transform 0.3s ease, box-shadow 0.3s ease;
             box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
