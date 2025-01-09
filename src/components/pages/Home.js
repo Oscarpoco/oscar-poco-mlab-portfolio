@@ -274,8 +274,8 @@ const Home = () => {
         }
 
         .title-decoration {
-          height: 2px;
-          width: 60px;
+          height: 10px;
+          width: 100px;
           margin-top: 8px;
           position: relative;
           overflow: hidden;
@@ -288,7 +288,7 @@ const Home = () => {
           left: -100%;
           width: 100%;
           height: 100%;
-          background: rgba(255,255,255,0.3);
+          background: #00f2fe;
           transform: skewX(-20deg);
           animation: shimmer 3s infinite;
         }
@@ -323,9 +323,10 @@ const Home = () => {
         }
 
         .cta-primary {
-          background: linear-gradient(45deg, #00f2fe, #4facfe);
+          background: linear-gradient(45deg,rgb(21, 111, 116),rgb(32, 117, 192));
           border: none;
-          color: white;
+          color: rgba(255,255,255,0.7);
+          letter-spacing: 1px
         }
 
         .btn-shine {
@@ -337,7 +338,7 @@ const Home = () => {
           background: linear-gradient(
             45deg,
             transparent 45%,
-            rgba(255,255,255,0.3) 50%,
+            rgba(255,255,255,0.7) 50%,
             transparent 55%
           );
           transform: translate(-100%, -100%);
@@ -353,6 +354,7 @@ const Home = () => {
           background: transparent;
           border: 2px solid #4facfe;
           color: #4facfe;
+          letter-spacing: 1px
         }
 
         .btn-line {
