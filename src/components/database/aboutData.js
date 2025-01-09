@@ -30,6 +30,11 @@ export const tabs = [
         title: 'Problem Solver',
         description: 'Analytical thinker with a track record of solving complex technical challenges through coding'
       },
+      {
+        icon: Rocket,
+        title: 'Driven by Impact',
+        description: 'Motivated by opportunities to contribute to impactful projects that make a difference'
+      },
     ],
 
     achievements: [
