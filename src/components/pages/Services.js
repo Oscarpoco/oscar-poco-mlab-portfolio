@@ -40,6 +40,7 @@ const Services = () => {
             width: 100%;
             margin: 0 auto;
             padding: 3em;
+            padding-bottom: 1em;
             min-height: 90vh;
             color: var(--text-primary);
             border-bottom: 4px solid rgba(255, 255, 255, 0.2);
