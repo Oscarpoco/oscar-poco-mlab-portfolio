@@ -1,9 +1,8 @@
-
 import React, { useState, useEffect } from 'react';
 
 // DATA
-import { tabs } from '../database/aboutData';
-import { tabContents } from '../database/aboutData';
+import {tabs, tabContents} from "../database/aboutData.js";
+
 
 const TabContent = ({ icon: Icon, title, description }) => (
   <div className="info-item">
@@ -17,11 +16,9 @@ const TabContent = ({ icon: Icon, title, description }) => (
   </div>
 );
 
-
 const Services = () => {
   const [activeTab, setActiveTab] = useState('about');
   const [isImageLoaded, setIsImageLoaded] = useState(false);
-
 
   useEffect(() => {
     const timer = setTimeout(() => {
@@ -31,90 +28,99 @@ const Services = () => {
   }, []);
 
   return (
-    <section className="services-section" id='about'>
+    <section className="services-section" id="about">
       <style>
         {`
-
-          .services-section 
-          {
+          .services-section {
             width: 100%;
             margin: 0 auto;
-            padding: 3em;
-            padding-bottom: 1em;
-            min-height: 90vh;
+            padding: 4rem 2rem;
+            min-height: 100vh;
             color: var(--text-primary);
             border-bottom: 4px solid rgba(255, 255, 255, 0.2);
             position: relative;
-            overflow-x: hidden;
-            box-sizing: border-box;
+            overflow: hidden;
+            background: rgba(0, 0, 0, 0.02);
           }
 
           .section-title {
-            font-size: 2.5rem;
+            font-size: 3rem;
             color: #f5f5f5;
             text-align: center;
-            margin-bottom: 3rem;
+            margin-bottom: 4rem;
             position: relative;
+            font-weight: 700;
           }
 
           .section-title::after {
             content: '';
             position: absolute;
-            bottom: -10px;
+            bottom: -12px;
             left: 50%;
             transform: translateX(-50%);
-            width: 60px;
+            width: 80px;
             height: 4px;
             background: linear-gradient(90deg, #4299e1, #667eea);
-            border-radius: 2px;
+            border-radius: 4px;
           }
 
           .profile-container {
-            display: grid;
-            grid-template-columns: 300px 1fr;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
             gap: 2rem;
+            // max-width: 1200px;
+            // background: red;
+            margin: 0 auto;
+            padding: 1rem
           }
 
           .profile-image-container {
             position: relative;
-            border-radius: 20px;
+            transform: rotate(-4deg);
           }
 
           .profile-image {
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            width: 300px;
-            height: 300px;
+            width: 330px;
+            height: 330px;
             border-radius: 50%;
             overflow: hidden;
-            border: 4px solid rgba(255, 255, 255, 0.7);
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            border: 6px solid rgba(255, 255, 255, 0.8);
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.15);
             opacity: ${isImageLoaded ? 1 : 0};
-            transition: opacity 0.3s ease;
-            background: #000;
+            transition: all 0.5s ease;
+            transform: translateY(${isImageLoaded ? '0' : '20px'});
           }
 
           .profile-image img {
             width: 100%;
             height: 100%;
             object-fit: cover;
-            transform: rotate(-4deg);
+            transform: scale(1.05);
+            transition: transform 0.5s ease;
+          }
+
+          .profile-image:hover img {
+            transform: scale(1.1);
           }
 
           .profile-content {
+            width: 100%;
             padding: 2rem;
           }
 
           .tabs {
-              display: flex;
-              gap: 0.5rem;
-              margin-bottom: 2rem;
-              flex-wrap: wrap;
-            }
+            display: flex;
+            gap: 1rem;
+            margin-bottom: 1.5rem;
+            flex-wrap: wrap;
+            justify-content: center;
+            border-bottom: 2px solid rgba(255, 255, 255, 0.2);
+            padding-bottom: 2.5rem;
+          }
 
-            .tab-wrapper {
+          .tab-wrapper {
               position: relative;
             }
 
@@ -127,30 +133,6 @@ const Services = () => {
               font-weight: 500;
               cursor: pointer;
               transition: color 0.3s ease;
-            }
-
-            /* Tooltip styles */
-            .tooltip {
-              position: absolute;
-              bottom: 100%;
-              left: 50%;
-              transform: translateX(-50%);
-              background: #333;
-              color: #fff;
-              padding: 1rem;
-              border-radius: 0.25rem;
-              font-size: 0.875rem;
-              white-space: nowrap;
-              opacity: 0;
-              visibility: hidden;
-              transition: opacity 0.2s ease, transform 0.2s ease;
-              z-index: 10;
-            }
-
-            .tab-wrapper:hover .tooltip {
-              opacity: 1;
-              visibility: visible;
-              transform: translateX(-50%) translateY(-0.5rem);
             }
 
           .tab-button::after {
@@ -172,13 +154,47 @@ const Services = () => {
             background: #4299e1;
           }
 
+          .tooltip {
+            position: absolute;
+            bottom: 100%;
+            left: 50%;
+            transform: translateX(-50%) translateY(10px);
+            background: rgba(255, 255, 255, .6);
+            color: #000;
+            padding: 0.75rem 1rem;
+            border-radius: 6px;
+            font-size: 0.875rem;
+            white-space: nowrap;
+            opacity: 0;
+            visibility: hidden;
+            transition: all 0.3s ease;
+            z-index: 10;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+          }
+
+          .tooltip::after {
+            content: '';
+            position: absolute;
+            top: 100%;
+            left: 50%;
+            transform: translateX(-50%);
+            border: 6px solid transparent;
+            border-top-color: rgba(0, 0, 0, 0.9);
+          }
+
+          .tab-wrapper:hover .tooltip {
+            opacity: 1;
+            visibility: visible;
+            transform: translateX(-50%) translateY(0);
+          }
+
           .content-section {
-            animation: fadeIn 0.3s ease;
+            animation: fadeIn 0.5s ease;
           }
 
           .info-list {
             display: grid;
-            gap: 1.5rem;
+            gap: 1rem;
           }
 
           .info-item {
@@ -186,44 +202,52 @@ const Services = () => {
             align-items: flex-start;
             gap: 1rem;
             padding: 1rem;
-            background: rgba(255, 255, 255, 0.8);
-            border-radius: 8px;
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            background: rgba(255, 255, 255, 0.7);
+            border-radius: 12px;
+            transition: all 0.3s ease;
             box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
           }
 
           .info-item:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+            transform: translateY(-4px);
+            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
           }
 
           .icon-wrapper {
             display: flex;
             align-items: center;
             justify-content: center;
-            width: 40px;
-            height: 40px;
+            width: 48px;
+            height: 48px;
             background: #ebf8ff;
-            border-radius: 8px;
+            border-radius: 12px;
             color: #4299e1;
+            transition: all 0.3s ease;
+          }
+
+          .info-item:hover .icon-wrapper {
+            background: #4299e1;
+            color: #fff;
           }
 
           .info-content h4 {
-            margin: 0 0 0.5rem;
+            margin: 0 0 0.75rem;
             color: #2d3748;
-            font-size: 1.1rem;
+            font-size: 1.25rem;
+            font-weight: 600;
           }
 
           .info-content p {
             margin: 0;
             color: #4a5568;
-            line-height: 1.5;
+            line-height: 1.6;
+            font-size: 1rem;
           }
 
           @keyframes fadeIn {
             from {
               opacity: 0;
-              transform: translateY(10px);
+              transform: translateY(20px);
             }
             to {
               opacity: 1;
@@ -231,46 +255,69 @@ const Services = () => {
             }
           }
 
-          @media (max-width: 768px) {
-
-          .services-section 
-          {
-            padding: 1em;
+          @media (max-width: 1024px) {
+            .profile-content {
+              padding: 2rem 1rem;
+            }
           }
-            .profile-container {
-              grid-template-columns: 1fr;
+
+          @media (max-width: 768px) {
+            .services-section {
+              padding: 3rem 1.5rem;
             }
 
-            .profile-image-container {
-              min-height: 350px;
+            .section-title {
+              font-size: 2.5rem;
+              margin-bottom: 3rem;
             }
 
-            /* Tooltip styles */
-            .tooltip {
-             
-              white-space: wrap;
-              
-            }
-
-            .profile-content 
-            {
-            padding: 2rem .5rem;
-            }
-
-            .tabs {
-              flex-wrap: wrap;
+            .profile-content {
+              padding: 1.5rem 1rem;
             }
 
             .tab-button {
-              flex: 1;
-              text-align: center;
-              padding: 0.5rem;
+              padding: 0.5rem 1rem;
+            }
+          }
+
+          @media (max-width: 480px) {
+            .services-section {
+              padding: 2rem 1rem;
+            }
+
+            .section-title {
+              font-size: 2rem;
+            }
+
+            .profile-image {
+              width: 250px;
+              height: 250px;
+            }
+
+            .profile-content {
+              padding: 1rem 0.5rem;
+            }
+
+            .info-item {
+              padding: 1rem;
+            }
+
+            .tabs {
+              margin-bottom: 2rem;
+            }
+
+            .tab-button {
+              font-size: 0.875rem;
+            }
+
+            .tooltip {
+              display: none;
             }
           }
         `}
       </style>
 
-      <h1 className="section-title" id='about'>About Me</h1>
+      <h1 className="section-title">About Me</h1>
 
       <div className="profile-container">
         <div className="profile-image-container">

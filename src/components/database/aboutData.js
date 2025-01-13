@@ -37,12 +37,6 @@ export const tabs = [
       },
 
       {
-        icon: Rocket,
-        title: 'Driven by Impact',
-        description: 'Motivated by opportunities to contribute to impactful projects that make a difference'
-      },
-
-      {
         icon: Handshake,
         title: 'Collaborative',
         description: 'Thrives in team environments, fostering strong communication and collaboration to achieve common goals'
@@ -71,11 +65,11 @@ export const tabs = [
         title: 'Figma Proficiency',
         description: 'Skilled in using Figma for designing user interfaces, creating prototypes, and collaborating on design projects with teams.'
       },
-      {
-        icon: Users,
-        title: 'Certified Scrum Master',
-        description: 'Certified Scrum Master with experience in facilitating Agile development, improving team productivity, and delivering successful projects.'
-      }
+      // {
+      //   icon: Users,
+      //   title: 'Certified Scrum Master',
+      //   description: 'Certified Scrum Master with experience in facilitating Agile development, improving team productivity, and delivering successful projects.'
+      // }
     ],
 
     // LONG TERM GOALS
@@ -90,11 +84,11 @@ export const tabs = [
         title: 'Launch a Mobile App',
         description: 'Design and release a cross-platform mobile application with React Native.'
       },
-      {
-        icon: Users,
-        title: 'Contribute to Open Source',
-        description: 'Make meaningful contributions to well-known open-source projects.'
-      },
+      // {
+      //   icon: Users,
+      //   title: 'Contribute to Open Source',
+      //   description: 'Make meaningful contributions to well-known open-source projects.'
+      // },
       {
         icon: Brain,
         title: 'Attain Leadership Roles',
@@ -114,11 +108,11 @@ export const tabs = [
         title: 'Master RESTful APIs',
         description: 'Deepen knowledge in building and optimizing APIs using Node.js and Express.'
       },
-      {
-        icon: Lightbulb,
-        title: 'Learn UI Animation',
-        description: 'Implement interactive animations in React Native applications.'
-      },
+      // {
+      //   icon: Lightbulb,
+      //   title: 'Learn UI Animation',
+      //   description: 'Implement interactive animations in React Native applications.'
+      // },
       {
         icon: Users,
         title: 'Network with Developers',
@@ -148,11 +142,11 @@ export const tabs = [
         title: 'Build an Impactful Portfolio',
         description: 'Create projects that showcase innovative solutions and creative design, blending functionality with aesthetics.'
       },
-      {
-        icon: Users,
-        title: 'Empower Collaboration',
-        description: 'Foster teamwork and build strong connections within tech communities to drive collective success.'
-      },
+      // {
+      //   icon: Users,
+      //   title: 'Empower Collaboration',
+      //   description: 'Foster teamwork and build strong connections within tech communities to drive collective success.'
+      // },
       {
         icon: Puzzle,
         title: 'Solve Real-World Problems',
@@ -189,11 +183,11 @@ export const tabs = [
         title: 'Figma for UI/UX',
         description: 'I have gained hands-on experience in designing user interfaces and creating prototypes with Figma, ensuring seamless user experiences through collaborative design workflows.'
       },
-      {
-        icon: Users,
-        title: 'Scrum Master',
-        description: 'I have acquired knowledge in Agile methodologies, effectively leading and facilitating teams to deliver projects efficiently while fostering collaboration and productivity.'
-      }
+      // {
+      //   icon: Users,
+      //   title: 'Scrum Master',
+      //   description: 'I have acquired knowledge in Agile methodologies, effectively leading and facilitating teams to deliver projects efficiently while fostering collaboration and productivity.'
+      // }
     ],
     
 
@@ -209,11 +203,11 @@ export const tabs = [
         title: 'Entrepreneurship',
         description: 'I learned the art of pitching to sponsors and effectively presenting projects to secure support and resources.'
       },
-      {
-        icon: Users,
-        title: 'Teamwork',
-        description: 'I collaborated with diverse teams to complete projects, fostering an environment of trust and shared responsibility.'
-      },
+      // {
+      //   icon: Users,
+      //   title: 'Teamwork',
+      //   description: 'I collaborated with diverse teams to complete projects, fostering an environment of trust and shared responsibility.'
+      // },
       {
         icon: Brain,
         title: 'Communication',

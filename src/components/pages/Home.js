@@ -527,6 +527,116 @@ const Home = () => {
           }
 
         }
+
+        /* Large screens (1920px and above - typical 17 inch and larger) */
+        @media screen and (min-width: 1920px) {
+          .hero-content {
+            max-width: 1800px;
+            margin: 0 auto;
+            gap: 60px;
+          }
+
+          .glitch-text {
+            font-size: 3.8rem;
+          }
+
+          .title-wrapper .title-text {
+            font-size: 1.8rem;
+          }
+
+          .hero-text p {
+            font-size: 1.1rem;
+            max-width: 500px;
+          }
+
+          .laptop-container {
+            max-width: 800px;
+            transform: perspective(2000px) rotateY(-15deg) rotateX(5deg);
+          }
+
+          .stats-grid {
+            gap: 30px;
+            max-width: 800px;
+          }
+
+          .stat-card {
+            padding: 25px;
+          }
+        }
+
+        /* Medium-large screens (1366px to 1919px - typical 15-16 inch) */
+        @media screen and (min-width: 1366px) and (max-width: 1919px) {
+          .hero-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            gap: 40px;
+          }
+
+          .glitch-text {
+            font-size: 3.2rem;
+          }
+
+          .title-wrapper .title-text {
+            font-size: 1.6rem;
+          }
+
+          .hero-text p {
+            font-size: 1rem;
+            max-width: 450px;
+          }
+
+          .laptop-container {
+            max-width: 600px;
+            transform: perspective(1500px) rotateY(-15deg) rotateX(5deg);
+          }
+
+          .stats-grid {
+            gap: 20px;
+            max-width: 600px;
+          }
+
+          .stat-card {
+            padding: 20px;
+          }
+
+          .stat-number {
+            font-size: 2rem;
+          }
+
+          .stat-label {
+            font-size: 0.85rem;
+          }
+        }
+
+        /* Additional optimization for height */
+        @media screen and (max-height: 900px) {
+          .hero {
+            padding: 60px 0;
+          }
+
+          .hero-content {
+            gap: 30px;
+          }
+
+          .laptop-container {
+            transform: scale(0.9) perspective(1500px) rotateY(-15deg) rotateX(5deg);
+          }
+        }
+
+        /* Fix for Chrome at 100% zoom */
+        @media screen and (min-width: 1200px) {
+          .hero {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            min-height: 90vh;
+          }
+
+          .hero-content {
+            width: 90%;
+            max-width: 1400px;
+          }
+        }
       `}</style>
     </div>
   );
