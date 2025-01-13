@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useState} from 'react';
 
 // DATA
 import { skills } from '../database/portfolioData';
@@ -6,6 +6,8 @@ import { individualProjects } from '../database/portfolioData';
 import { groupProjects } from '../database/portfolioData';
 
 const PortfolioSection = () => {
+
+  const [keyFeaturesVisible, setKeyFeaturesVisible] = useState(false);
 
   return (
     <div className="portfolio-container" id="portfolio">
@@ -75,12 +77,17 @@ const PortfolioSection = () => {
                 ))}
               </div>
               <div className="features">
-                <h4>Key Features</h4>
-                <ul>
-                  {project.features.map((feature, i) => (
-                    <li key={i}>{feature}</li>
-                  ))}
-                </ul>
+              <h4 onClick={() => setKeyFeaturesVisible(!keyFeaturesVisible)} style={{cursor: 'pointer'}}>
+                {keyFeaturesVisible ? 'Close' : 'See'} Key Features
+              </h4>
+
+                {keyFeaturesVisible && (
+                  <ul>
+                    {project.features.map((feature, i) => (
+                      <li key={i}>{feature}</li>
+                    ))}
+                  </ul>
+                )}
               </div>
               <p className="collaboration">{project.collaboration}</p>
               <div className="project-links">

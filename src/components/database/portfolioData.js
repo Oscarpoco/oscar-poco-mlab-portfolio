@@ -118,7 +118,8 @@ export const groupProjects = [
     techStack: ['React Native', 'Node.js', 'MongoDB', 'Expo'],
     features: ['User account management', 'Table reservation system', 'Booking management'],
     collaboration: 'Implemented Agile methodology using Trello for task management and daily stand-ups for team coordination.',
-    links: { github: 'https://github.com/mLab-alscar-projects/restaurant-reservation-app', demo: '#' }
+    links: { github: 'https://github.com/mLab-alscar-projects/restaurant-reservation-app', demo: '#' },
+    visible: false
   },
   {
     title: 'Restaurant Reservation CMS',
@@ -127,7 +128,9 @@ export const groupProjects = [
     techStack: ['React Native', 'Node.js', 'MongoDB', 'Expo'],
     features: ['User management', 'Restaurant profile management', 'Reservation oversight'],
     collaboration: 'Used Git for version control and implemented code review processes for quality assurance.',
-    links: { github: 'https://github.com/mLab-alscar-projects/restaurent-reservation-cms', demo: '#' }
+    links: { github: 'https://github.com/mLab-alscar-projects/restaurent-reservation-cms', demo: '#' },
+    visible: false
+
   },
   {
     title: 'Restaurant Admin Registration Portal',
@@ -136,6 +139,8 @@ export const groupProjects = [
     techStack: ['React Native', 'MongoDB', 'Expo'],
     features: ['Admin account creation', 'Access control management', 'Administrator verification'],
     collaboration: 'Utilized pair programming for complex features and maintained documentation using Notion.',
-    links: { github: 'https://github.com/mLab-alscar-projects/admin-register-cms-app', demo: '#' }
+    links: { github: 'https://github.com/mLab-alscar-projects/admin-register-cms-app', demo: '#' },
+    visible: false
+
   }
 ];
