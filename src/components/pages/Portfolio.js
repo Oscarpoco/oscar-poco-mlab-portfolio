@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React, { useState } from 'react';
 
 // DATA
 import { skills } from '../database/portfolioData';
@@ -16,7 +16,10 @@ const PortfolioSection = () => {
         <div className="skills-grid">
           {skills.map((skill, index) => (
             <div key={index} className="skill-card">
-              <h3>{skill.name}</h3>
+              <div className="skill-header">
+                <h3>{skill.name}</h3>
+                <skill.icon className="skill-icon" size={28} color="#4299e1" />
+              </div>
               <div className={`proficiency ${skill.level.toLowerCase()}`}>
                 {skill.level}
               </div>
@@ -31,7 +34,12 @@ const PortfolioSection = () => {
         <div className="projects-grid">
           {individualProjects.map((project, index) => (
             <div key={index} className="project-card">
-              <h3>{project.title}</h3>
+
+              <div className="skill-header">
+                <h3>{project.title}</h3>
+                <project.icon className="skill-icon" size={28} color="#4299e1" />
+              </div>
+
               <p>{project.description}</p>
               <div className="tech-stack">
                 {project.techStack.map((tech, i) => (
@@ -49,10 +57,10 @@ const PortfolioSection = () => {
               <p className="challenges">{project.challenges}</p>
               <div className="project-links">
                 <a href={project.links.github} className="github">GitHub</a>
-                {project.links.demo ? 
-                <a href={project.links.demo} className="demo">Live Demo</a> 
-                : 
-                <a className="demo">No Live Demo</a>
+                {project.links.demo ?
+                  <a href={project.links.demo} className="demo">Live Demo</a>
+                  :
+                  <a className="demo">No Live Demo</a>
                 }
               </div>
             </div>
@@ -65,7 +73,7 @@ const PortfolioSection = () => {
         <div className="projects-grid">
           {groupProjects.map((project, index) => (
             <div key={index} className="project-card group">
-              <h3>{project.title}</h3>
+              <h3>{project.title} <span>{<project.icon className="skill-icon" size={28} color="#4299e1" />}</span></h3>
               <p>{project.description}</p>
               <div className="team-members">
                 <h4>Team Members</h4>
@@ -81,9 +89,9 @@ const PortfolioSection = () => {
                 ))}
               </div>
               <div className="features">
-              <h4 onClick={() => setKeyFeaturesVisible(!keyFeaturesVisible)} style={{cursor: 'pointer'}}>
-                {keyFeaturesVisible ? 'Close' : 'See'} Key Features
-              </h4>
+                <h4 onClick={() => setKeyFeaturesVisible(!keyFeaturesVisible)} style={{ cursor: 'pointer' }}>
+                  {keyFeaturesVisible ? 'Close' : 'See'} Key Features
+                </h4>
 
                 {keyFeaturesVisible && (
                   <ul>
@@ -96,10 +104,10 @@ const PortfolioSection = () => {
               <p className="collaboration">{project.collaboration}</p>
               <div className="project-links">
                 <a href={project.links.github} className="github">GitHub</a>
-                {project.links.demo ? 
-                <a href={project.links.demo} className="demo">Live Demo</a> 
-                : 
-                <a className="demo">No Live Demo</a>
+                {project.links.demo ?
+                  <a href={project.links.demo} className="demo">Live Demo</a>
+                  :
+                  <a className="demo">No Live Demo</a>
                 }
               </div>
             </div>
@@ -178,6 +186,22 @@ const PortfolioSection = () => {
             border: 1px solid rgba(0, 0, 0, .1);
           }
 
+          .skill-header 
+          {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            margin-bottom: 15px;
+          }
+
+          .skill-icon {
+            transition: transform 0.2s ease;
+          }
+
+          .skill-icon {
+            transform: scale(1.1);
+          }
+
           .skill-card:hover 
           {
             transform: translateY(-5px);
@@ -187,7 +211,6 @@ const PortfolioSection = () => {
           .skill-card h3 
           {
             font-size: 1.5rem;
-            margin-bottom: 15px;
             color: var(--text-primary);
           }
 
@@ -242,7 +265,6 @@ const PortfolioSection = () => {
 
           .project-card h3 {
             font-size: 1.8rem;
-            margin-bottom: 15px;
             color: var(--text-primary);
           }
 
