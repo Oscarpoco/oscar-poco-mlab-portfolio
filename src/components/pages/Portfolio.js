@@ -5,6 +5,11 @@ import { skills } from '../database/portfolioData';
 import { individualProjects } from '../database/portfolioData';
 import { groupProjects } from '../database/portfolioData';
 
+// ICONS
+import { IoLogoGithub } from "react-icons/io";
+import { FaLinkSlash } from "react-icons/fa6";
+import { IoIosLink } from "react-icons/io";
+
 const PortfolioSection = () => {
 
   const [keyFeaturesVisible, setKeyFeaturesVisible] = useState(false);
@@ -56,11 +61,11 @@ const PortfolioSection = () => {
               </div>
               <p className="challenges">{project.challenges}</p>
               <div className="project-links">
-                <a href={project.links.github} className="github">GitHub</a>
+                <a href={project.links.github} className="github"> <IoLogoGithub size={24} color='#111'/> GitHub</a>
                 {project.links.demo ?
-                  <a href={project.links.demo} className="demo">Live Demo</a>
+                  <a href={project.links.demo} className="demo"> <IoIosLink size={24} color='#111'/> Live Demo</a>
                   :
-                  <a className="demo">No Live Demo</a>
+                  <a className="demo"> <FaLinkSlash size={24} color='#111'/> No Live Demo</a>
                 }
               </div>
             </div>
@@ -103,11 +108,11 @@ const PortfolioSection = () => {
               </div>
               <p className="collaboration">{project.collaboration}</p>
               <div className="project-links">
-                <a href={project.links.github} className="github">GitHub</a>
+                <a href={project.links.github} className="github"> <IoLogoGithub size={24} color='#111'/> GitHub</a>
                 {project.links.demo ?
-                  <a href={project.links.demo} className="demo">Live Demo</a>
+                  <a href={project.links.demo} className="demo"> <IoIosLink size={24} color='#111'/> Live Demo </a>
                   :
-                  <a className="demo">No Live Demo</a>
+                  <a className="demo"> <FaLinkSlash size={24} color='#111'/> No Live Demo</a>
                 }
               </div>
             </div>
@@ -343,6 +348,9 @@ const PortfolioSection = () => {
             transition: var(--transition);
             text-align: center;
             min-width: 150px;
+            display: flex;
+            align-items: center;
+            gap: 10px
           }
 
           .project-links .github {
