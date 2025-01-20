@@ -1,13 +1,14 @@
 export const skills = [
-  { name: 'HTML', level: 'Intermediate', notes: 'Used in multiple web development projects' },
+  { name: 'HTML', level: 'Advanced', notes: 'Used in multiple web development projects' },
   { name: 'CSS', level: 'Advanced', notes: 'Implemented responsive layouts and modern design patterns' },
   { name: 'JavaScript', level: 'Intermediate', notes: 'Developed interactive web applications' },
-  { name: 'React Native', level: 'Intermediate', notes: 'Created multiple mobile applications including task management systems' },
+  { name: 'React Native', level: 'Intermediate', notes: 'Created multiple mobile applications including restaurant management systems' },
+  { name: 'React', level: 'Advanced', notes: 'Created multiple web applications including Hotel management systems' },
   { name: 'TypeScript', level: 'Beginner', notes: 'Implemented type-safe features and API integrations' },
-  { name: 'MongoDB', level: 'Intermediate', notes: 'Designed and implemented NoSQL database solutions' },
+  { name: 'MongoDB', level: 'Advanced', notes: 'Designed and implemented NoSQL database solutions' },
   { name: 'Firebase', level: 'Intermediate', notes: 'Built real-time applications and authentication systems' },
   { name: 'Node.js', level: 'Intermediate', notes: 'Developed backend services and REST APIs' },
-  { name: 'Express', level: 'Intermediate', notes: 'Created robust server-side applications' },
+  { name: 'Express', level: 'Advanced', notes: 'Created robust server-side applications' },
   { name: 'Python', level: 'Beginner', notes: 'Completed WeThinkCode bootcamp with programming fundamentals' },
   { name: 'Material UI', level: 'Intermediate', notes: 'Implemented responsive component-based designs' },
   { name: 'React Redux', level: 'Intermediate', notes: 'Managed complex application state' },
@@ -16,7 +17,8 @@ export const skills = [
   { name: 'Framer Motion', level: 'Beginner', notes: 'Created animated user interfaces' },
   { name: 'VS Code', level: 'Advanced', notes: 'Primary development environment' },
   { name: 'PyCharm', level: 'Advanced', notes: 'Python development environment' },
-  { name: 'Figma', level: 'Intermediate', notes: 'UI/UX design and prototyping' }
+  { name: 'Figma', level: 'Intermediate', notes: 'UI/UX design and prototyping' },
+  { name: 'Trello', level: 'Intermediate', notes: 'Tracking the progress when working on a project.' },
 ];
 
 export const individualProjects = [
@@ -42,7 +44,7 @@ export const individualProjects = [
     techStack: ['React Native', 'Async Storage', 'Firebase'],
     features: ['User profile management', 'Voice recording', 'Note organization'],
     challenges: 'Optimized audio recording and storage for efficient mobile performance.',
-    links: { github: 'https://github.com/Oscarpoco/recording-app', demo: '#' }
+    links: { github: 'https://github.com/Oscarpoco/recording-app', demo: '' }
   },
   {
     title: 'Birthday Card Creator',
@@ -50,7 +52,7 @@ export const individualProjects = [
     techStack: ['React Native', 'Async Storage'],
     features: ['Card template selection', 'Custom message creation', 'Social sharing'],
     challenges: 'Implemented smooth image manipulation and sharing capabilities.',
-    links: { github: 'https://github.com/Oscarpoco/birthday-card', demo: '#' }
+    links: { github: 'https://github.com/Oscarpoco/birthday-card', demo: '' }
   },
   {
     title: 'Gallery App',
@@ -58,7 +60,7 @@ export const individualProjects = [
     techStack: ['React Native', 'Async Storage', 'SQLite'],
     features: ['Photo capture with geolocation', 'Image organization', 'Location-based sorting'],
     challenges: 'Integrated device camera and location services while maintaining performance.',
-    links: { github: 'https://github.com/Oscarpoco/Gallery', demo: '#' }
+    links: { github: 'https://github.com/Oscarpoco/Gallery', demo: '' }
   },
   {
     title: 'Shopping List Mobile App',
@@ -66,7 +68,7 @@ export const individualProjects = [
     techStack: ['React Native', 'Async Storage', 'SQLite'],
     features: ['User profiles', 'List creation and management', 'Item categorization'],
     challenges: 'Implemented offline data persistence with synchronization capabilities.',
-    links: { github: 'https://github.com/Oscarpoco/shopping-list-native', demo: '#' }
+    links: { github: 'https://github.com/Oscarpoco/shopping-list-native', demo: '' }
   },
   {
     title: 'Shopping List Web App',
@@ -74,7 +76,7 @@ export const individualProjects = [
     techStack: ['React', 'Local Storage', 'Redux', 'JSON Server'],
     features: ['User authentication', 'List sharing', 'Item tracking'],
     challenges: 'Managed complex state updates across multiple users and lists.',
-    links: { github: 'https://github.com/Oscarpoco/shopping-list', demo: '#' }
+    links: { github: 'https://github.com/Oscarpoco/shopping-list', demo: '' }
   },
   {
     title: 'Payment Gateway Integration',
@@ -82,7 +84,7 @@ export const individualProjects = [
     techStack: ['React Native', 'Paystack'],
     features: ['Secure payment processing', 'Transaction history', 'Payment verification'],
     challenges: 'Implemented secure payment flow with proper error handling.',
-    links: { github: 'https://github.com/Oscarpoco/payment-gateway', demo: '#' }
+    links: { github: 'https://github.com/Oscarpoco/payment-gateway', demo: '' }
   },
   {
     title: 'Employee Management System',
@@ -90,7 +92,7 @@ export const individualProjects = [
     techStack: ['React', 'Local Storage', 'Firebase Admin', 'Node', 'Express'],
     features: ['Employee records management', 'Admin dashboard', 'Role-based access control'],
     challenges: 'Implemented secure authentication and authorization system.',
-    links: { github: 'https://github.com/Oscarpoco/employee-management-with-node-authentication', demo: '#' }
+    links: { github: 'https://github.com/Oscarpoco/employee-management-with-node-authentication', demo: '' }
   },
   {
     title: 'Online Recipe App',
@@ -98,7 +100,7 @@ export const individualProjects = [
     techStack: ['React', 'Local Storage', 'Recipe API'],
     features: ['Recipe creation', 'Search functionality', 'User collections'],
     challenges: 'Optimized recipe search and filtering for large datasets.',
-    links: { github: 'https://github.com/Oscarpoco/nkombiso-online-recipe', demo: '#' }
+    links: { github: 'https://github.com/Oscarpoco/nkombiso-online-recipe', demo: '' }
   },
   {
     title: 'Weather App',
@@ -106,7 +108,7 @@ export const individualProjects = [
     techStack: ['React', 'Local Storage', 'Weather API'],
     features: ['City weather search', 'Weather forecasts', 'Location-based updates'],
     challenges: 'Implemented efficient API caching and error handling for unreliable connections.',
-    links: { github: 'https://github.com/Oscarpoco/weather-application', demo: '#' }
+    links: { github: 'https://github.com/Oscarpoco/weather-application', demo: 'weather-application-phi-livid.vercel.app' }
   }
 ];
 
@@ -118,7 +120,7 @@ export const groupProjects = [
     techStack: ['React Native', 'Node.js', 'MongoDB', 'Expo'],
     features: ['User account management', 'Table reservation system', 'Booking management'],
     collaboration: 'Implemented Agile methodology using Trello for task management and daily stand-ups for team coordination.',
-    links: { github: 'https://github.com/mLab-alscar-projects/restaurant-reservation-app', demo: '#' },
+    links: { github: 'https://github.com/mLab-alscar-projects/restaurant-reservation-app', demo: '' },
     visible: false
   },
   {
@@ -128,7 +130,7 @@ export const groupProjects = [
     techStack: ['React Native', 'Node.js', 'MongoDB', 'Expo'],
     features: ['User management', 'Restaurant profile management', 'Reservation oversight'],
     collaboration: 'Used Git for version control and implemented code review processes for quality assurance.',
-    links: { github: 'https://github.com/mLab-alscar-projects/restaurent-reservation-cms', demo: '#' },
+    links: { github: 'https://github.com/mLab-alscar-projects/restaurent-reservation-cms', demo: '' },
     visible: false
 
   },
@@ -139,8 +141,7 @@ export const groupProjects = [
     techStack: ['React Native', 'MongoDB', 'Expo'],
     features: ['Admin account creation', 'Access control management', 'Administrator verification'],
     collaboration: 'Utilized pair programming for complex features and maintained documentation using Notion.',
-    links: { github: 'https://github.com/mLab-alscar-projects/admin-register-cms-app', demo: '#' },
+    links: { github: 'https://github.com/mLab-alscar-projects/admin-register-cms-app', demo: '' },
     visible: false
-
   }
 ];

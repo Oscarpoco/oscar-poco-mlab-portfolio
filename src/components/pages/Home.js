@@ -14,13 +14,26 @@ const Home = () => {
   }, []);
 
   const contactInfo = [
-    "// Contact Info last updated : 12 / 01 /2025",
+    "// Contact Info last updated : 19 / 01 /2025",
     "const contact = {",
     "  location: 'Soweto CodeTribe Lab',",
     "  email: 'oscarkylepoco@gmail.com',",
     "  phone: '0660850741'",
     "};"
   ];
+
+
+  // DOWNLOAD RESUME
+  const handleDownload = () => {
+    const cvUrl = '/oscarkylpoco.pdf';
+
+    const link = document.createElement('a');
+    link.href = cvUrl;
+    link.download = 'oscarkylpoco.pdf';
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
+  };
 
   return (
     <div className="home">
@@ -41,16 +54,16 @@ const Home = () => {
               Building digital experiences that matter. Unshaken by fear and always ready to conquer challenges.
             </p>
             <div className="cta-container">
-              <button 
-                className="cta-primary" 
+              <button
+                className="cta-primary"
                 onClick={() => window.location.href = "mailto:oscarkylepoco@gmail.com"}
               >
                 Let's Work Together
                 <span className="btn-glow"></span>
                 <span className="btn-shine"></span>
               </button>
-              <button className="cta-secondary">
-                View Portfolio
+              <button className="cta-secondary" onClick={handleDownload}>
+                DOWNLOAD RESUME
                 <span className="btn-line"></span>
                 <span className="btn-highlight"></span>
               </button>
@@ -79,7 +92,7 @@ const Home = () => {
               <div className="laptop-screen">
                 <div className="laptop-content">
                   {contactInfo.map((line, index) => (
-                    <div 
+                    <div
                       key={index}
                       className="code-line"
                       style={{
@@ -105,7 +118,7 @@ const Home = () => {
       {/* STLYING */}
       <style>{`
         .home {
-          background-color: #0a0a0a;
+          background-color: rgba(0, 0, 0, .6);
           color: #ffffff;
           min-height: 90vh;
           font-family: 'Inter', system-ui, sans-serif;
@@ -317,20 +330,21 @@ const Home = () => {
 
         .cta-primary, .cta-secondary {
           padding: 15px 30px;
-          border-radius: 8px;
+          border-radius: 50px;
           font-size: 1rem;
           font-weight: 600;
           cursor: pointer;
           position: relative;
           overflow: hidden;
           transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+          text-transform: uppercase;
         }
 
         .cta-primary {
           background: linear-gradient(45deg,rgb(21, 111, 116),rgb(32, 117, 192));
           border: none;
           color: rgba(255,255,255,0.7);
-          letter-spacing: 1px
+   
         }
 
         .btn-shine {
@@ -358,7 +372,7 @@ const Home = () => {
           background: transparent;
           border: 2px solid #4facfe;
           color: #4facfe;
-          letter-spacing: 1px
+       
         }
 
         .btn-line {

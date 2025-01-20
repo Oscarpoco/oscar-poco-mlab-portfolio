@@ -49,7 +49,11 @@ const PortfolioSection = () => {
               <p className="challenges">{project.challenges}</p>
               <div className="project-links">
                 <a href={project.links.github} className="github">GitHub</a>
-                <a href={project.links.demo} className="demo">Live Demo</a>
+                {project.links.demo ? 
+                <a href={project.links.demo} className="demo">Live Demo</a> 
+                : 
+                <a className="demo">No Live Demo</a>
+                }
               </div>
             </div>
           ))}
@@ -92,7 +96,11 @@ const PortfolioSection = () => {
               <p className="collaboration">{project.collaboration}</p>
               <div className="project-links">
                 <a href={project.links.github} className="github">GitHub</a>
-                <a href={project.links.demo} className="demo">Live Demo</a>
+                {project.links.demo ? 
+                <a href={project.links.demo} className="demo">Live Demo</a> 
+                : 
+                <a className="demo">No Live Demo</a>
+                }
               </div>
             </div>
           ))}
@@ -224,6 +232,7 @@ const PortfolioSection = () => {
             border: 1px solid rgba(0, 0, 0, .1);
             position: relative;
             overflow: hidden;
+            padding-bottom: 100px
           }
 
           .project-card:hover {
@@ -297,7 +306,11 @@ const PortfolioSection = () => {
           .project-links {
             display: flex;
             gap: 15px;
-            margin-top: 25px;
+            position: absolute;
+            bottom: 25px;
+            left: 25px;
+            width: 100%;
+            z-index: 1
           }
 
           .project-links a {
@@ -307,7 +320,7 @@ const PortfolioSection = () => {
             font-weight: 500;
             transition: var(--transition);
             text-align: center;
-            min-width: 120px;
+            min-width: 150px;
           }
 
           .project-links .github {
