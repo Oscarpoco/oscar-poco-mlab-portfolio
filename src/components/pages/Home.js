@@ -2,6 +2,11 @@ import React, { useEffect, useState } from 'react';
 import { individualProjects } from '../database/portfolioData';
 import { groupProjects } from '../database/portfolioData';
 
+// ICONS
+import { IoCodeDownload } from "react-icons/io5";
+import { GiNetworkBars } from "react-icons/gi";
+import { FaCode } from "react-icons/fa";
+
 const Home = () => {
   const [isVisible, setIsVisible] = useState(false);
 
@@ -47,7 +52,9 @@ const Home = () => {
               <div className="glitch-overlay"></div>
             </div>
             <div className="title-wrapper">
-              <h3 className='title-text'>MERN Stack Developer</h3>
+              <h3 className='title-text'>
+                MERN Stack Developer
+              </h3>
               <div className="title-decoration"></div>
             </div>
             <p>
@@ -59,11 +66,13 @@ const Home = () => {
                 onClick={() => window.location.href = "mailto:oscarkylepoco@gmail.com"}
               >
                 Let's Work Together
+                <FaCode size={'2rem'}/>
                 <span className="btn-glow"></span>
                 <span className="btn-shine"></span>
               </button>
               <button className="cta-secondary" onClick={handleDownload}>
                 DOWNLOAD RESUME
+                <IoCodeDownload size={'2rem'}/>
                 <span className="btn-line"></span>
                 <span className="btn-highlight"></span>
               </button>
@@ -118,7 +127,7 @@ const Home = () => {
       {/* STLYING */}
       <style>{`
         .home {
-          background-color: rgba(0, 0, 0, .6);
+          background-color: rgba(0, 0, 0, .5);
           color: #ffffff;
           min-height: 90vh;
           font-family: 'Inter', system-ui, sans-serif;
@@ -288,6 +297,9 @@ const Home = () => {
           color: #a0aec0;
           margin: 0;
           transition: color 0.3s ease;
+          display: flex;
+          gap: 15px;
+          align-items: center;
         }
 
         .title-decoration {
@@ -338,6 +350,9 @@ const Home = () => {
           overflow: hidden;
           transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
           text-transform: uppercase;
+          display: flex;
+          gap: 10px;
+          align-items: center;
         }
 
         .cta-primary {
