@@ -202,7 +202,7 @@ const Services = () => {
             align-items: flex-start;
             gap: 1rem;
             padding: 1rem;
-            background: rgba(255, 255, 255, 0.7);
+            background: rgba(255, 255, 255, 0.4);
             border-radius: 12px;
             transition: all 0.3s ease;
             box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
@@ -232,14 +232,14 @@ const Services = () => {
 
           .info-content h4 {
             margin: 0 0 0.75rem;
-            color: #2d3748;
+            color: #000;
             font-size: 1.25rem;
             font-weight: 600;
           }
 
           .info-content p {
             margin: 0;
-            color: #4a5568;
+            color: #111;
             line-height: 1.6;
             font-size: 1rem;
           }
