@@ -202,7 +202,7 @@ const Services = () => {
             align-items: flex-start;
             gap: 1rem;
             padding: 1rem;
-            background: rgba(255, 255, 255, 0.4);
+            background: rgba(255, 255, 255, 0.6);
             border-radius: 12px;
             transition: all 0.3s ease;
             box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
@@ -282,7 +282,7 @@ const Services = () => {
 
           @media (max-width: 480px) {
             .services-section {
-              padding: 2rem 1rem;
+              padding: 2rem 0rem;
             }
 
             .section-title {
@@ -295,7 +295,7 @@ const Services = () => {
             }
 
             .profile-content {
-              padding: 1rem 0.5rem;
+              padding: 1rem 0.1rem;
             }
 
             .info-item {
@@ -307,12 +307,21 @@ const Services = () => {
             }
 
             .tab-button {
-              font-size: 0.875rem;
+              font-size: 0.5rem;
             }
 
             .tooltip {
               display: none;
             }
+
+            .icon-wrapper {
+            width: 50px;
+            height: 50px;
+            background: #ebf8ff;
+            border-radius: 10px;
+            padding: 10px
+            }
+
           }
         `}
       </style>

@@ -13,13 +13,15 @@ import { IoIosLink } from "react-icons/io";
 const PortfolioSection = () => {
 
   const [keyFeaturesVisible, setKeyFeaturesVisible] = useState(false);
+  const [showAll, setShowAll] = useState(false);
+  const displayedSkills = showAll ? skills : skills.slice(0, 6);
 
   return (
     <div className="portfolio-container" id="portfolio">
       <section className="skills-section" id="portfolio">
         <h2>Skills Matrix</h2>
         <div className="skills-grid">
-          {skills.map((skill, index) => (
+          {displayedSkills.map((skill, index) => (
             <div key={index} className="skill-card">
               <div className="skill-header">
                 <h3>{skill.name}</h3>
@@ -32,6 +34,24 @@ const PortfolioSection = () => {
             </div>
           ))}
         </div>
+
+        {skills.length > 6 && !showAll && (
+          <button
+            onClick={() => setShowAll(true)}
+            className="see-more-button"
+          >
+            See More
+          </button>
+        )}
+
+        {showAll && skills.length > 6 && (
+          <button
+            onClick={() => setShowAll(false)}
+            className="see-less-button"
+          >
+            See Less
+          </button>
+        )}
       </section>
 
       <section className="projects-section" id="portfolio">
@@ -61,11 +81,11 @@ const PortfolioSection = () => {
               </div>
               <p className="challenges">{project.challenges}</p>
               <div className="project-links">
-                <a href={project.links.github} className="github"> <IoLogoGithub size={24} color='#111'/> GitHub</a>
+                <a href={project.links.github} className="github"> <IoLogoGithub size={24} color='#111' /> GitHub</a>
                 {project.links.demo ?
-                  <a href={project.links.demo} className="demo"> <IoIosLink size={24} color='#111'/> Live Demo</a>
+                  <a href={project.links.demo} className="demo"> <IoIosLink size={24} color='#111' /> Live Demo</a>
                   :
-                  <a className="demo"> <FaLinkSlash size={24} color='#111'/> No Live Demo</a>
+                  <a className="demo"> <FaLinkSlash size={24} color='#111' /> No Live Demo</a>
                 }
               </div>
             </div>
@@ -108,11 +128,11 @@ const PortfolioSection = () => {
               </div>
               <p className="collaboration">{project.collaboration}</p>
               <div className="project-links">
-                <a href={project.links.github} className="github"> <IoLogoGithub size={24} color='#111'/> GitHub</a>
+                <a href={project.links.github} className="github"> <IoLogoGithub size={24} color='#111' /> GitHub</a>
                 {project.links.demo ?
-                  <a href={project.links.demo} className="demo"> <IoIosLink size={24} color='#111'/> Live Demo </a>
+                  <a href={project.links.demo} className="demo"> <IoIosLink size={24} color='#111' /> Live Demo </a>
                   :
-                  <a className="demo"> <FaLinkSlash size={24} color='#111'/> No Live Demo</a>
+                  <a className="demo"> <FaLinkSlash size={24} color='#111' /> No Live Demo</a>
                 }
               </div>
             </div>
@@ -245,6 +265,17 @@ const PortfolioSection = () => {
             color: #16a34a;
           }
 
+          .see-more-button, .see-less-button {
+            display: block;
+            margin: 1rem 0;
+            padding: 0.5rem 1rem;
+            background-color: #4299e1;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+          }
+
           .projects-grid {
             display: grid;
             grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
@@ -260,7 +291,7 @@ const PortfolioSection = () => {
             border: 1px solid rgba(0, 0, 0, .1);
             position: relative;
             overflow: hidden;
-            padding-bottom: 100px
+            padding-bottom: 100px;
           }
 
           .project-card:hover {
@@ -337,7 +368,7 @@ const PortfolioSection = () => {
             bottom: 25px;
             left: 25px;
             width: 100%;
-            z-index: 1
+            z-index: 1;
           }
 
           .project-links a {
@@ -404,10 +435,12 @@ const PortfolioSection = () => {
 
             .project-links {
               flex-direction: column;
+              position: unset;
             }
 
             .project-links a {
               width: 100%;
+              justify-content: center;
             }
           }
 
