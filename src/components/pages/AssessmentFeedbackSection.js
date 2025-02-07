@@ -54,7 +54,7 @@ const AssessmentFeedbackSection = () => {
   return (
     <div className="assessment-feedback-container">
       <section className="assessments-section">
-        <h2>Assessments</h2>
+        <h2 className="header-title">Assessments</h2>
         <div className="assessment-grid">
           {assessments.map(assessment => (
             <div key={assessment.id} className="assessment-card">
@@ -85,7 +85,7 @@ const AssessmentFeedbackSection = () => {
       </section>
 
       <section className="feedback-section">
-        <h2>Feedback and Reflections</h2>
+        <h2 className="header-title">Feedback and Reflections</h2>
         
         <div className="feedback-container">
           <div className="feedback-card facilitator-feedback">
@@ -131,9 +131,8 @@ const AssessmentFeedbackSection = () => {
             color: var(--text-primary);
           }
 
-          .assessments-section,
-          .feedback-section {
-            margin-bottom: 4rem;
+          .assessments-section {
+            margin-bottom: 3rem;
           }
 
           h2 {

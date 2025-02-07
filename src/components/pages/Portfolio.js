@@ -30,7 +30,7 @@ const PortfolioSection = () => {
               <div className={`proficiency ${skill.level.toLowerCase()}`}>
                 {skill.level}
               </div>
-              <p>{skill.notes}</p>
+              <p className='paragraph'>{skill.notes}</p>
             </div>
           ))}
         </div>
@@ -424,6 +424,30 @@ const PortfolioSection = () => {
               font-size: 1.3rem;
             }
 
+            .skill-card 
+            {
+              padding: 15px;
+            }
+
+            .skill-header 
+            {
+              margin-bottom: 0px;
+            }
+
+            .skill-card h3 
+            {
+              font-size: 1.2rem;
+            }
+
+
+            .paragraph{
+              font-size: .9rem;
+            }
+
+            .proficiency {
+              border-radius: 7px;
+            }
+
             .projects-grid {
               grid-template-columns: 1fr;
             }
@@ -440,6 +464,7 @@ const PortfolioSection = () => {
             .project-links a {
               width: 100%;
               justify-content: center;
+              border-radius: 10px;
             }
           }
 

@@ -224,6 +224,7 @@ const Footer = () => {
             display: flex;
             flex-direction: column;
             align-items: center;
+
           }
 
           .footer-links a:hover {
