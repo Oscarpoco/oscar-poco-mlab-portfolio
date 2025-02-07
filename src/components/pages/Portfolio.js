@@ -19,7 +19,7 @@ const PortfolioSection = () => {
   return (
     <div className="portfolio-container" id="portfolio">
       <section className="skills-section" id="portfolio">
-        <h2>Skills Matrix</h2>
+        <h2 className="header-title">Skills Matrix</h2>
         <div className="skills-grid">
           {displayedSkills.map((skill, index) => (
             <div key={index} className="skill-card">
@@ -55,7 +55,7 @@ const PortfolioSection = () => {
       </section>
 
       <section className="projects-section" id="portfolio">
-        <h2>Individual Projects</h2>
+        <h2 className="header-title">Individual Projects</h2>
         <div className="projects-grid">
           {individualProjects.map((project, index) => (
             <div key={index} className="project-card">
@@ -94,7 +94,7 @@ const PortfolioSection = () => {
       </section>
 
       <section className="group-projects-section" id="portfolio">
-        <h2>Group Projects</h2>
+        <h2 className="header-title">Group Projects</h2>
         <div className="projects-grid">
           {groupProjects.map((project, index) => (
             <div key={index} className="project-card group">
@@ -168,9 +168,8 @@ const PortfolioSection = () => {
               
           section 
           {
-            margin-bottom: 60px;
+            margin-bottom: 40px;
           }
-
 
           h2 
           {
@@ -421,8 +420,8 @@ const PortfolioSection = () => {
               padding: 1em;
             }
 
-            h2 {
-              font-size: 2rem;
+            .header-title {
+              font-size: 1.3rem;
             }
 
             .projects-grid {

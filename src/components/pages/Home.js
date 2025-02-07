@@ -388,7 +388,6 @@ const Home = () => {
           background: transparent;
           border: 2px solid #4facfe;
           color: #4facfe;
-       
         }
 
         .btn-line {
@@ -523,6 +522,7 @@ const Home = () => {
           .laptop-container {
             transform: none;
             max-width: 100%;
+            padding: 0;
           }
 
           .laptop-container:hover {
@@ -539,23 +539,41 @@ const Home = () => {
             margin-bottom: 6px;
           }
 
-
           .glitch-text {
-            font-size: 2.5rem;
+            font-size: 1.8rem;
           }
 
           .title-wrapper .title-text {
-            font-size: 1.5rem;
+            font-size: .9rem;
+          }
+
+          .hero-text p {
+            font-size: .9rem;
+            max-width: 500px;
           }
 
           .cta-container {
             flex-direction: column;
+            margin-bottom: 20px;
           }
 
           .stats-grid {
             grid-template-columns: 1fr;
           }
 
+          .cta-primary, .cta-secondary {
+            padding: 10px 30px;
+            border-radius: 10px;
+            font-size: .9rem;
+            font-weight: 600;
+          }
+
+          .stat-card {
+            border: 1px solid rgba(255, 255, 255, 0.5);
+            padding: 15px;
+            border-radius: 15px;
+            backdrop-filter: blur(100px);
+          }
         }
 
         /* Large screens (1920px and above - typical 17 inch and larger) */

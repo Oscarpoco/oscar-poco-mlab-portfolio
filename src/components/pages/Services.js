@@ -70,8 +70,6 @@ const Services = () => {
             align-items: center;
             justify-content: center;
             gap: 2rem;
-            // max-width: 1200px;
-            // background: red;
             margin: 0 auto;
             padding: 1rem
           }
@@ -202,7 +200,7 @@ const Services = () => {
             align-items: flex-start;
             gap: 1rem;
             padding: 1rem;
-            background: rgba(255, 255, 255, 0.6);
+            background: rgba(255, 255, 255, .7);
             border-radius: 12px;
             transition: all 0.3s ease;
             box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
@@ -286,12 +284,14 @@ const Services = () => {
             }
 
             .section-title {
-              font-size: 2rem;
+              font-size: 1.3rem;
             }
 
             .profile-image {
               width: 250px;
               height: 250px;
+              border-radius: 15px;
+              border: 4px solid rgba(255, 255, 255, .5);
             }
 
             .profile-content {
@@ -303,7 +303,7 @@ const Services = () => {
             }
 
             .tabs {
-              margin-bottom: 2rem;
+              margin-bottom: 1rem;
             }
 
             .tab-button {
@@ -315,12 +315,57 @@ const Services = () => {
             }
 
             .icon-wrapper {
-            width: 50px;
-            height: 50px;
-            background: #ebf8ff;
-            border-radius: 10px;
-            padding: 10px
-            }
+              width: 50px;
+              height: 50px;
+              background: #ebf8ff;
+              border-radius: 10px;
+              padding: 10px
+              }
+
+              .info-content h4 {
+                margin: 0 0 0.2rem;
+                font-size: 1rem;
+              }
+
+              .info-content p {
+                line-height: 1.5;
+                font-size: .7rem;
+              }
+
+              .tabs {
+                display: flex;
+                gap: .3rem;
+                margin-bottom: .5rem;
+                flex-wrap: wrap;
+                justify-content: start;
+                border-bottom: 2px solid rgba(255, 255, 255, 0.2);
+                padding-bottom: .5rem;
+                  // background: #ff0000;
+              }
+
+              .tab-wrapper {
+                  position: relative;
+                  background: #00aeffa2;
+                  padding: 0 5px;
+                  // border-radius: 5px;
+                }
+
+                .tab-button {
+                  font-size: .5rem;
+                  display: flex;
+                  justify-content: start;
+                  align-items: center;
+                  padding: 9px 0;
+                }
+
+              .tab-button.active {
+                color: #333;
+                font-weight: 600;
+              }
+
+              .tab-button.active::after {
+                background: rgba(255, 255, 255, 1);
+              }
 
           }
         `}
