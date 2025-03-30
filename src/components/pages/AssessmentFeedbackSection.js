@@ -1,35 +1,7 @@
 import React, { useState } from 'react';
+import { assessments } from '../database/assessments';
 
 const AssessmentFeedbackSection = () => {
-  const [assessments] = useState([
-    {
-      id: 1,
-      name: 'UI Challenge',
-      gitLink: 'https://github.com/user/ui-challenge',
-      dateCompleted: '2024-01-15',
-      score: '85%',
-      notes: 'Above average.',
-      category: 'UI/UX'
-    },
-    {
-      id: 2,
-      name: 'JavaScript Assessment',
-      gitLink: 'https://github.com/user/js-assessment',
-      dateCompleted: '2024-01-20',
-      score: '90%',
-      notes: 'Excellent understanding of basics.',
-      category: 'JavaScript'
-    },
-    {
-      id: 3,
-      name: 'React Native',
-      gitLink: 'https://github.com/user/react-native-course',
-      dateCompleted: '2024-01-25',
-      score: 'N/A',
-      notes: 'Completed an external course.',
-      category: 'Mobile'
-    }
-  ]);
 
   const [feedback] = useState({
     facilitator: [
@@ -72,11 +44,10 @@ const AssessmentFeedbackSection = () => {
                   <span className="value score">{assessment.score}</span>
                 </div>
                 <div className="detail-row">
-                  <span className="label">Notes:</span>
                   <span className="value">{assessment.notes}</span>
                 </div>
                 <a href={assessment.gitLink} className="git-link" target="_blank" rel="noopener noreferrer">
-                  View Code
+                  VIEW CODE
                 </a>
               </div>
             </div>
@@ -225,6 +196,7 @@ const AssessmentFeedbackSection = () => {
           .value {
             color: #2d3748;
             font-weight: 500;
+            text-align: center;
           }
 
           .score {
@@ -239,11 +211,12 @@ const AssessmentFeedbackSection = () => {
             background: #4299e1;
             color: white;
             text-align: center;
-            font-weight: 500;
+            font-weight: 400;
             text-decoration: none;
             border-radius: 8px;
             transition: background 0.2s ease;
             margin-top: 1rem;
+            letter-spacing: 2px
           }
 
           .git-link:hover {

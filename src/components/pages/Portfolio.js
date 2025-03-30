@@ -114,7 +114,7 @@ const PortfolioSection = () => {
                 ))}
               </div>
               <div className="features">
-                <h4 onClick={() => setKeyFeaturesVisible(!keyFeaturesVisible)} style={{ cursor: 'pointer' }}>
+                <h4 className='key-features-button' onClick={() => setKeyFeaturesVisible(!keyFeaturesVisible)} style={{ cursor: 'pointer' }}>
                   {keyFeaturesVisible ? 'Close' : 'See'} Key Features
                 </h4>
 
@@ -267,12 +267,17 @@ const PortfolioSection = () => {
           .see-more-button, .see-less-button {
             display: block;
             margin: 1rem 0;
-            padding: 0.5rem 1rem;
+            padding: 0.8rem 1.2rem;
             background-color: #4299e1;
             color: white;
             border: none;
-            border-radius: 4px;
+            border-radius: 5px;
             cursor: pointer;
+          }
+
+          .see-more-button, .see-less-button:hover {
+            background-color:rgb(4, 130, 233);
+            transition: var(--transition);
           }
 
           .projects-grid {
@@ -344,6 +349,15 @@ const PortfolioSection = () => {
           .features ul {
             list-style: none;
             padding-left: 0;
+          }
+
+          .key-features-button {
+            background-color: #4299e1;
+            padding: .7em 1em;
+            color: #fff;
+            border-radius: 50px;
+            text-align: center;
+            text-transform: uppercase
           }
 
           .features li {

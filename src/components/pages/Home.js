@@ -48,7 +48,7 @@ const Home = () => {
         <div className={`hero-content ${isVisible ? 'visible' : ''}`}>
           <div className="hero-text">
             <div className="name-wrapper">
-              <h1 className="glitch-text">Oscar Kyle Poco</h1>
+              <h1 className="glitch-text">OSCAR KYLE POCO</h1>
               <div className="glitch-overlay"></div>
             </div>
             <div className="title-wrapper">
