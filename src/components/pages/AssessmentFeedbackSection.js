@@ -25,7 +25,7 @@ const AssessmentFeedbackSection = () => {
 
   return (
     <div className="assessment-feedback-container">
-      <section className="assessments-section">
+      <section className="assessments-section" id="projects">
         <h2 className="header-title">Assessments</h2>
         <div className="assessment-grid">
           {assessments.map(assessment => (
@@ -55,7 +55,7 @@ const AssessmentFeedbackSection = () => {
         </div>
       </section>
 
-      <section className="feedback-section">
+      <section className="feedback-section" id="projects">
         <h2 className="header-title">Feedback and Reflections</h2>
         
         <div className="feedback-container">
