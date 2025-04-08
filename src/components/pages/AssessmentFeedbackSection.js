@@ -231,14 +231,14 @@ const AssessmentFeedbackSection = () => {
           }
 
           .feedback-card {
-            background: rgba(255, 255, 255, .8);
+            background: rgba(255, 255, 255, .4);
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
             border: 1px solid rgba(0, 0, 0, .1);
 
           }
 
           .feedback-card h3 {
-            color: #2d3748;
+            // color: #000;
             font-size: 1.5rem;
             margin-bottom: 1.5rem;
             padding-bottom: 1rem;
@@ -246,7 +246,7 @@ const AssessmentFeedbackSection = () => {
           }
 
           .feedback-card h4 {
-            color: #4a5568;
+            // color: #4a5568;
             font-size: 1.1rem;
             margin-bottom: 1rem;
             font-weight: 600;
@@ -262,7 +262,7 @@ const AssessmentFeedbackSection = () => {
             position: relative;
             padding-left: 1.5rem;
             margin-bottom: 1rem;
-            color: #4a5568;
+            color:rgb(183, 186, 192);
             line-height: 1.6;
           }
 
@@ -304,18 +304,18 @@ const AssessmentFeedbackSection = () => {
 
           @media (prefers-color-scheme: dark) {
             .assessment-feedback-container {
-              background: #1a202c;
-              color: #e2e8f0;
+              background: rgba(0, 0, 0, 0.1);
+              color: #fff;
             }
 
             .assessment-card,
             .feedback-card {
-              background: #2d3748;
+              background: #1e293b;
               border-color: rgba(255, 255, 255, 0.1);
             }
 
             h2, h3, h4 {
-              color: #e2e8f0;
+              color: #ffffff;
             }
 
             .assessment-header {
@@ -323,16 +323,16 @@ const AssessmentFeedbackSection = () => {
             }
 
             .value, li {
-              color: #e2e8f0;
+              color: #ffffff;
             }
 
             .label {
-              color: #a0aec0;
+             color: #ffffff;
             }
 
             .category-tag {
-              background: rgba(66, 153, 225, 0.2);
-              color: #63b3ed;
+              background: rgba(66, 153, 225, 0.7);
+              color:rgb(221, 225, 228);
             }
 
             .detail-row {

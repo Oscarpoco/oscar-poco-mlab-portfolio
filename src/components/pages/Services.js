@@ -347,7 +347,6 @@ const Services = () => {
                   position: relative;
                   background: #00aeffa2;
                   padding: 0 5px;
-                  // border-radius: 5px;
                 }
 
                 .tab-button {
